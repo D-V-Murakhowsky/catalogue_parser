@@ -15,8 +15,14 @@ class PageGetter:
         cls._login()
 
     @classmethod
-    def parse_catalogue_pages(cls, start_page=-1, last_page=-1) -> pd.DataFrame:
-        pass
+    def parse_catalogue_pages(cls, start_page=-1, last_page=-1) -> List[str]:
+        if start_page == -1:
+            start_page, last_page = cls._get_pages_range()
+
+        if start_page < 0:
+            raise ValueError('Improper start page value')
+
+        return cls._get_pages(start_page, last_page)
 
     @classmethod
     def _get_pages_range(cls):
@@ -31,7 +37,7 @@ class PageGetter:
             if page_number == 0:
                 url = config.catalogue_url
             else:
-                url = f'{config.catalogue_url}?page={page_number - 1}'
+                url = f'{config.catalogue_url}?page={page_number}'
             result_list.append(cls._get_page(url))
         return result_list
 
