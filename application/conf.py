@@ -20,6 +20,10 @@ class Config:
     def password(self):
         return self.data['password']
 
+    @property
+    def time_delay(self):
+        return int(self.data['delay'])
+
     def __init__(self):
         filepath = pathlib.Path(__file__).parents[1].resolve() / 'assets/data.json'
         with open(filepath, 'r') as f:

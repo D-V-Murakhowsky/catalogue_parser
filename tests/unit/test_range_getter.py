@@ -1,16 +1,15 @@
-from unittest import TestCase
 import pathlib
+from unittest import TestCase
 
 from application.parser import Parser
 
 
-class TestPageParsing(TestCase):
-
+class TestPageRange(TestCase):
     def setUp(self) -> None:
         path = pathlib.Path(__file__).parent.resolve() / 'source.txt'
         with open(path, encoding='utf-8') as f:
             self.text = f.read()
 
-    def test_page(self):
-        result = Parser.get_table_from_the_page(self.text)
-        self.assertLess(0, result.shape[0])
+    def test_page_range_getter(self):
+        actual = Parser.get_pages_range(self.text)
+        self.assertEqual((1, 306), actual)

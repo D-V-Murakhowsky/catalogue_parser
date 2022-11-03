@@ -1,6 +1,7 @@
 import time
 from typing import List
 
+import pandas as pd
 from selenium.webdriver.common.by import By
 
 from application import config
@@ -9,8 +10,23 @@ from application.selenium_connector import driver
 
 class PageGetter:
 
+    def __new__(cls, *args, **kwargs):
+        cls._login()
+
     @classmethod
-    def get_pages(cls, start_page: int, finish_page: int) -> List[str]:
+    def parse_catalogue_pages(cls, start_page=-1, last_page=-1) -> pd.DataFrame:
+        pass
+
+    @classmethod
+    def _get_pages_range(cls):
+        cls._check_url()
+        driver.get(config.catalogue_url)
+        pagination = driver.find_element(By.CLASS_NAME, 'pagination')
+        pass
+
+
+    @classmethod
+    def _get_pages(cls, start_page: int, finish_page: int) -> List[str]:
         result_list = []
         for page_number in range(start_page, finish_page):
             if page_number == 0:
@@ -20,8 +36,13 @@ class PageGetter:
             result_list.append(cls._get_page(url))
         return result_list
 
+    @classmethod
+    def _check_url(cls):
+        if 'catalog' not in driver.current_url:
+            cls._login()
+
     @staticmethod
-    def _login(cls):
+    def _login():
         try:
             driver.get(config.login_url)
             login = driver.find_element(By.NAME, "email")
@@ -30,13 +51,15 @@ class PageGetter:
             login.send_keys(config.login)
             password.send_keys(config.password)
             submit_button.click()
+            time.sleep(config.time_delay)
+            driver.get(config.catalogue_url)
         except Exception as ex:
             pass
 
     @staticmethod
     def _get_page(url: str) -> str:
         driver.get(url)
-        time.sleep(5)
+        time.sleep(config.time_delay)
         return driver.page_source
 
 
