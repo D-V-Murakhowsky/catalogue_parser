@@ -29,8 +29,8 @@ class Parser:
 
     @classmethod
     def proceed_articles_table(cls, df: pd.DataFrame) -> pd.DataFrame:
-        df['prices'] = df['prices'].apply(cls._process_price)
-        df['quantities'] = df['quantities'].apply(cls._process_qty)
+        df['prices'] = df['prices'].apply(cls._process_price).astype('float32')
+        df['quantities'] = df['quantities'].apply(cls._process_qty).astype('int32')
         return df
 
     @staticmethod
