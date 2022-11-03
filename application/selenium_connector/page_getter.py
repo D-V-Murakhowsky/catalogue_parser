@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 
 from application import config
 from application.selenium_connector import driver
+from application.parser import Parser
 
 
 class PageGetter:
@@ -21,9 +22,7 @@ class PageGetter:
     def _get_pages_range(cls):
         cls._check_url()
         driver.get(config.catalogue_url)
-        pagination = driver.find_element(By.CLASS_NAME, 'pagination')
-        pass
-
+        return Parser.get_pages_range(driver.page_source)
 
     @classmethod
     def _get_pages(cls, start_page: int, finish_page: int) -> List[str]:
