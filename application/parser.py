@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import pandas as pd
 from typing import Tuple
+import re
 
 
 class Parser:
@@ -25,4 +26,34 @@ class Parser:
         first = list(soup.find('ul', class_='pagination').children)[2].text
         last = list(soup.find('ul', class_='pagination').children)[-3].text
         return int(first), int(last)
+
+    @classmethod
+    def proceed_articles_table(cls, df: pd.DataFrame) -> pd.DataFrame:
+        df['prices'] = df['prices'].apply(cls._process_price)
+        df['quantities'] = df['quantities'].apply(cls._process_qty)
+        return df
+
+    @staticmethod
+    def _process_price(data: str) -> float:
+        try:
+            before_point, after_point = data.split('.')
+            whole = re.search(r'\d*', before_point).group(0)
+            frac = re.search(r'\d*', after_point).group(0)
+            return int(whole) + 0.01 * int(frac)
+        except TypeError:
+            return 0
+
+    @staticmethod
+    def _process_qty(data: str) -> int:
+        try:
+            match data.strip().lower():
+                case 'есть в наличии':
+                    return 999
+                case 'нет в наличии':
+                    return 0
+                case _:
+                    return int(re.search(r'\d*', data).group(0))
+        except (TypeError, ValueError):
+            return 0
+
 
