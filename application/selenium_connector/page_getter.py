@@ -1,4 +1,5 @@
 import time
+from typing import List
 
 from selenium.webdriver.common.by import By
 
@@ -22,7 +23,21 @@ class PageGetter:
             pass
 
     @staticmethod
-    def get_page(n: int) -> str:
-        driver.get(config.catalogue_url)
+    def get_page(url: str) -> str:
+        driver.get(url)
         time.sleep(5)
         return driver.page_source
+
+    @classmethod
+    def get_pages(cls, start_page: int, finish_page: int) -> List[str]:
+        result_list = []
+        for page_number in range(start_page, finish_page):
+            if page_number == 0:
+                url = config.catalogue_url
+            else:
+                url = f'{config.catalogue_url}?page={page_number - 1}'
+            result_list.append(cls.get_page(url))
+        return result_list
+
+
+
