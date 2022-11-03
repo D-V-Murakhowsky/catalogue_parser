@@ -2,7 +2,8 @@ import time
 
 from selenium.webdriver.common.by import By
 
-from application import driver, config
+from application import config
+from application.selenium_connector import driver
 
 
 class PageGetter:

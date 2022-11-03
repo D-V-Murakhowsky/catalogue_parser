@@ -1,13 +1,9 @@
 from unittest import TestCase
 
-from application.selenium_connector.parser import Parser
+from application.selenium_connector.page_getter import PageGetter
 
 
 class TestLogin(TestCase):
 
     def test_login(self):
-        Parser.login()
-
-    def test_parse_first_sheet(self):
-        Parser.login()
-        Parser.get_page(0)
+        PageGetter.login()
