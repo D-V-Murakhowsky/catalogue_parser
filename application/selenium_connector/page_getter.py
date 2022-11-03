@@ -15,16 +15,20 @@ class PageGetter:
         cls._login()
 
     @classmethod
-    def parse_catalogue_pages_to_df(cls, start_page=-1, last_page=-1) -> pd.DataFrame:
+    def parse_catalogue_pages_to_df(cls, start_page=-1, last_page=-1, signal=None) -> pd.DataFrame:
         cls._check_url()
         list_of_pages_sources = cls.parse_catalogue_pages(start_page=start_page, last_page=last_page)
         list_of_parsed_dfs = list(map(lambda x: Parser.get_table_from_the_page(x), list_of_pages_sources))
         return pd.concat(list_of_parsed_dfs)
 
     @classmethod
-    def parse_catalogue_pages(cls, start_page=-1, last_page=-1) -> List[str]:
+    def parse_catalogue_pages(cls, start_page=-1, last_page=-1, signal=None) -> List[str]:
         if start_page == -1:
             start_page, last_page = cls._get_pages_range()
+
+        if signal:
+            signal.emit(f'Початкова сторінка: {str(start_page)}')
+            signal.emit(f'Кінцева сторінка: {str(start_page)}')
 
         if start_page < 0:
             raise ValueError('Improper start page value')
