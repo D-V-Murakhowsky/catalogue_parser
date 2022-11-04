@@ -30,8 +30,8 @@ class TheWindow(qw.QMainWindow):
     def _run_sync(self):
         self.ui.pushButton_2.setDisabled(True)
         synchronizer = SyncRunner()
-        synchronizer.signal.message_signal.connect(self._show_message)
-        synchronizer.signal.finish_signal.connect(self._enable_button)
+        synchronizer.signals.message_signal.connect(self._show_message)
+        synchronizer.signals.finish_signal.connect(self._enable_button)
         QThreadPool().start(synchronizer)
 
     @Slot(str)

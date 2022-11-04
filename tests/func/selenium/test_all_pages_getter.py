@@ -1,6 +1,6 @@
 from unittest import TestCase, skip
 
-from application.selenium_connector.page_getter import PageGetter
+from application.page_getter import PageGetter
 
 
 class TestAllPagesGetting(TestCase):

@@ -2,7 +2,7 @@ from unittest import TestCase
 
 import pandas as pd
 
-from application.selenium_connector.page_getter import PageGetter
+from application.page_getter import PageGetter
 
 
 class TestGetAndParse(TestCase):

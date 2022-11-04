@@ -1,26 +1,42 @@
-from PySide6.QtCore import Signal, QRunnable, Slot, QObject, QTimer
+import pathlib
 
-from application.selenium_connector.page_getter import PageGetter
+from PySide6.QtCore import Signal, QRunnable, Slot, QObject
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+from application.page_getter import PageGetter
 
 
-class Signals(QObject):
+class Signaler(QObject):
     message_signal = Signal(str)
     finish_signal = Signal()
 
+    def __getitem__(self, item):
+        return self
+
 
 class SyncRunner(QRunnable):
+    signals = Signaler()
 
     def __init__(self):
         super().__init__()
-        self.signal = Signals()
-        self.page_getter = PageGetter()
+        self.driver = self._create_the_driver()
+        self.page_getter = PageGetter(self.driver)
 
     def run(self):
-        self.signal.message_signal.emit('Синхронізацію запущено')
-        parsed_df = self.page_getter.parse_catalogue_pages_to_df(signal=self.signal.message_signal)
-        self.signal.message_signal.emit('Синхронізацію завершено')
+        self.signals.message_signal.emit('Синхронізацію запущено')
 
+        self.signals.finish_signal.emit()
 
     @Slot(str)
     def status_receiver(self, message_str: str) -> None:
-        self.signal.message_signal.emit(message_str)
+        self.message_signal.emit(message_str)
+
+    @staticmethod
+    def _create_the_driver():
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        path_to_driver = pathlib.Path(__file__).parents[1].resolve() / 'assets/chromedriver.exe'
+        print(path_to_driver)
+        return webdriver.Chrome(executable_path=str(path_to_driver),
+                                options=chrome_options)
