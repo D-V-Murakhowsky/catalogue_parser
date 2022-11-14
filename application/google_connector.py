@@ -42,7 +42,8 @@ class GoogleConnector(metaclass=Singleton):
         df['Код_поставщика'] = df[config.supplier_code_sync_column].apply(lambda x:
                                                                           x[len(config.supplier_prefix) + 1:])
         df.reset_index(inplace=True, drop=False, names=['row_number'])
-        return df.drop(columns=['filter_mask'])
+        df.drop(inplace=True, columns=['filter_mask'])
+        return df
 
     def save_changes_into_gsheet(self, data: pd.DataFrame) -> NoReturn:
         pass
