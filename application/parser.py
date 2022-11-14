@@ -18,7 +18,10 @@ class Parser:
                 art.append(col[3].getText().strip())
                 price.append(col[4].getText().strip())
                 qty.append(col[5].getText().strip())
-        return pd.DataFrame({'names': name, 'article': art, 'prices': price, 'quantities': qty})
+        return Parser._proceed_articles_table(pd.DataFrame({'names': name,
+                                                            'article': art,
+                                                            'prices': price,
+                                                            'quantities': qty}))
 
     @staticmethod
     def get_pages_range(source: str) -> Tuple:
@@ -28,7 +31,7 @@ class Parser:
         return int(first), int(last)
 
     @classmethod
-    def proceed_articles_table(cls, df: pd.DataFrame) -> pd.DataFrame:
+    def _proceed_articles_table(cls, df: pd.DataFrame) -> pd.DataFrame:
         df['prices'] = df['prices'].apply(cls._process_price).astype('float32')
         df['quantities'] = df['quantities'].apply(cls._process_qty).astype('int32')
         return df

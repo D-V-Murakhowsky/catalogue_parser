@@ -30,7 +30,7 @@ class SyncRunner(QRunnable):
 
     @Slot(str)
     def status_receiver(self, message_str: str) -> None:
-        self.message_signal.emit(message_str)
+        self.signals.message_signal.emit(message_str)
 
     @staticmethod
     def _create_the_driver():

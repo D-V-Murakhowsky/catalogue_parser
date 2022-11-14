@@ -19,5 +19,5 @@ class TestPageParsing(TestCase):
         self.assertLess(0, result.shape[0])
 
     def test_page_cleaner(self):
-        cleaned_df = Parser.proceed_articles_table(self.df)
+        cleaned_df = Parser._proceed_articles_table(self.df)
         pass

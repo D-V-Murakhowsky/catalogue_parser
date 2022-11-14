@@ -26,7 +26,7 @@ class GoogleConnector(metaclass=Singleton):
         df = df[[config.code_sync_column, config.supplier_code_sync_column,
                  config.availability_sync_column, config.price_sync_column]]
         df = self._filter_google_table_by_supplier_prefix(df)
-        return df
+        return df.drop(columns=['filter_mask'])
 
     def save_changes_into_gsheet(self, data: pd.DataFrame) -> NoReturn:
         pass
