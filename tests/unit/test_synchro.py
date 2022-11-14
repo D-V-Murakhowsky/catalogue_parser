@@ -2,6 +2,8 @@ from unittest import TestCase
 
 import pandas as pd
 
+from application.synchronizer import Synchronizer
+
 
 class TestComparator(TestCase):
 
@@ -10,4 +12,4 @@ class TestComparator(TestCase):
         self.site_table = pd.read_pickle('pickled_sample_table.pickle')
 
     def test_comparator(self):
-        pass
+        Synchronizer.sync_tables(self.site_table, self.google_table)
