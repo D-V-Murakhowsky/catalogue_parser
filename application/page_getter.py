@@ -16,7 +16,9 @@ class PageGetter(metaclass=Singleton):
 
     def parse_catalogue_pages_to_df(self, start_page=-1, last_page=-1, signal=None) -> pd.DataFrame:
         self._check_url()
-        list_of_pages_sources = self.parse_catalogue_pages(start_page=start_page, last_page=last_page)
+        if config.test_mode & (start_page == -1):
+            start_page, last_page = 1, 6
+        list_of_pages_sources = self.parse_catalogue_pages(start_page=start_page, last_page=last_page, signal=signal)
         list_of_parsed_dfs = list(map(lambda x: Parser.get_table_from_the_page(x), list_of_pages_sources))
         return pd.concat(list_of_parsed_dfs)
 
@@ -31,16 +33,18 @@ class PageGetter(metaclass=Singleton):
         if start_page < 0:
             raise ValueError('Improper start page value')
 
-        return self._get_pages(start_page, last_page)
+        return self._get_pages(start_page, last_page, signal=signal)
 
     def _get_pages_range(self):
         self._check_url()
         self.driver.get(config.catalogue_url)
         return Parser.get_pages_range(self.driver.page_source)
 
-    def _get_pages(self, start_page: int, finish_page: int) -> List[str]:
+    def _get_pages(self, start_page: int, finish_page: int, signal=None) -> List[str]:
         result_list = []
         for page_number in range(start_page, finish_page + 1):
+            if signal:
+                signal.emit(f'Парсинг сторінки {page_number}')
             if page_number == 0:
                 url = config.catalogue_url
             else:

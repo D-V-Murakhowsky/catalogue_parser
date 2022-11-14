@@ -25,7 +25,7 @@ class SyncRunner(QRunnable):
 
     def run(self):
         self.signals.message_signal.emit('Синхронізацію запущено')
-
+        google_df = self.page_getter.parse_catalogue_pages_to_df(signal=SyncRunner.signals.message_signal)
         self.signals.finish_signal.emit()
 
     @Slot(str)

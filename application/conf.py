@@ -56,6 +56,10 @@ class Config:
     def excel_file_name(self):
         return self.data['excel_file']
 
+    @property
+    def test_mode(self):
+        return self.data['test_mode'] == '1'
+
     def __init__(self):
         filepath = pathlib.Path(__file__).parents[1].resolve() / 'assets/data.json'
         with open(filepath, 'r', encoding='utf-8') as f:
