@@ -5,8 +5,12 @@ import pandas as pd
 from selenium.webdriver.common.by import By
 
 from application import config
-from application.parser import Parser
 from application.core import Singleton
+from application.parser import Parser
+import logging
+
+
+logger = logging.getLogger('main_logger')
 
 
 class PageGetter(metaclass=Singleton):
@@ -17,7 +21,9 @@ class PageGetter(metaclass=Singleton):
     def parse_catalogue_pages_to_df(self, start_page=-1, last_page=-1, signal=None) -> pd.DataFrame:
         self._check_url()
         if config.test_mode & (start_page == -1):
-            start_page, last_page = 1, 6
+            start_page, last_page = 2, 4
+
+        logger.info(f'Pages to parse: {start_page} - {last_page}')
         list_of_pages_sources = self.parse_catalogue_pages(start_page=start_page, last_page=last_page, signal=signal)
         list_of_parsed_dfs = list(map(lambda x: Parser.get_table_from_the_page(x), list_of_pages_sources))
         return pd.concat(list_of_parsed_dfs)

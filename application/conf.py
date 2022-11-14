@@ -58,7 +58,7 @@ class Config:
 
     @property
     def test_mode(self):
-        return self.data['test_mode'] == '1'
+        return self.data['test_mode'] == 1
 
     def __init__(self):
         filepath = pathlib.Path(__file__).parents[1].resolve() / 'assets/data.json'
