@@ -52,6 +52,10 @@ class Config:
     def supplier_prefix(self):
         return self.data['prefix']
 
+    @property
+    def excel_file_name(self):
+        return self.data['excel_file']
+
     def __init__(self):
         filepath = pathlib.Path(__file__).parents[1].resolve() / 'assets/data.json'
         with open(filepath, 'r', encoding='utf-8') as f:

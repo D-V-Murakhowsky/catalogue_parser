@@ -15,7 +15,7 @@ class GoogleConnector(metaclass=Singleton):
             self.sh = self.client.open(config.google_table_name)
             self.ws = self.sh.worksheet('title', config.sheet_to_sync_name)
         except Exception as ex:
-            pass
+            print(f'Exception occurs: {ex}')
 
     @staticmethod
     def _get_credentials_dir() -> pathlib.Path:
