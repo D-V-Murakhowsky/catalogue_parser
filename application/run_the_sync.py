@@ -5,6 +5,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 from application.page_getter import PageGetter
+from application.synchronizer import Synchronizer
+from application.google_connector import GoogleConnector
 
 
 class Signaler(QObject):
@@ -22,10 +24,17 @@ class SyncRunner(QRunnable):
         super().__init__()
         self.driver = self._create_the_driver()
         self.page_getter = PageGetter(self.driver)
+        self.google_connector = GoogleConnector()
 
     def run(self):
         self.signals.message_signal.emit('Синхронізацію запущено')
-        google_df = self.page_getter.parse_catalogue_pages_to_df(signal=SyncRunner.signals.message_signal)
+        catalogue_df = self.page_getter.parse_catalogue_pages_to_df(signal=SyncRunner.signals.message_signal)
+        google_df = self.google_connector.get_table_into_df()
+        SyncRunner.signals.message_signal.emit(f'Google таблицю завантажено')
+        data_for_update = Synchronizer.sync_tables(supplier_data=catalogue_df,
+                                                   google_sheet_data=google_df)
+        self.google_connector.save_changes_into_gsheet(data_for_update)
+        SyncRunner.signals.message_signal.emit(f'Google таблицю записано')
         self.signals.finish_signal.emit()
 
     @Slot(str)
