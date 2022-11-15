@@ -79,7 +79,7 @@ class Synchronizer:
             if (row[config.availability_sync_column] == '-') & (supplier_data['quantities'] > 0):
                 google_df.at[index, config.availability_sync_column] = '+'
                 google_df.at[index, 'change_flag'] = True
-
+        google_df.to_pickle('updated_google_df.pickle')
         return google_df
 
     @staticmethod
