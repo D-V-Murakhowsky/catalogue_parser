@@ -1,5 +1,6 @@
-import pathlib
 import json
+import logging
+import pathlib
 
 
 class Config:
@@ -61,7 +62,8 @@ class Config:
         return self.data['test_mode'] == 1
 
     def __init__(self):
-        filepath = pathlib.Path(__file__).parents[1].resolve() / 'assets/data.json'
+        filepath = pathlib.PureWindowsPath(__file__).parents[1] / 'assets/data.json'
         with open(filepath, 'r', encoding='utf-8') as f:
             self.data = json.load(f)['spartakelectronics.com']
+        logging.getLogger('file_logger').debug('JSON loaded')
 
