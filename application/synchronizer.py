@@ -17,7 +17,7 @@ class Synchronizer:
         """
         Make changes in google table data, read and write excel data
         :param supplier_data: dataframe with data from the supplier's site
-        :param google_sheet_data: dataframe with data from the google sheet
+        :param google_sheet_data: dataframe with data from the Google sheet
         :return: updated dataframe with changes in google data
         """
 
@@ -31,12 +31,13 @@ class Synchronizer:
     @classmethod
     def _new_articles_to_excel(cls, google_sheet_data, supplier_data) -> NoReturn:
         """
-        Choose data to write into the excel table
-        :param google_sheet_data: dataframe with data from the google sheet
+        Choose data to write into the Excel table
+        :param google_sheet_data: dataframe with data from the Google sheet
         :param supplier_data: dataframe with data from the supplier's site
         :return: None
         """
         excel_df = cls._read_excel()
+        supplier_data['article'] = supplier_data['article'].astype('int64')
         not_existing_present_articles = \
             supplier_data.loc[~supplier_data['article'].isin(google_sheet_data['Код_поставщика'].values)]
         not_existing_present_articles = \
@@ -50,7 +51,7 @@ class Synchronizer:
                                                       'prices': 'Цена'},
                                              inplace=True)
         not_existing_present_articles['Флаг_добавления'] = '-'
-        excel_df = pd.concat([excel_df, not_existing_present_articles])
+        excel_df = pd.concat([excel_df, not_existing_present_articles]).reset_index(drop=True)
         cls._write_excel(excel_df)
 
     @classmethod
@@ -84,11 +85,11 @@ class Synchronizer:
     @staticmethod
     def _read_excel() -> NoReturn:
         """
-        Reads excel file
+        Reads Excel file
         :return: None
         """
         if (path := pathlib.Path(__file__).parents[1].resolve() / f'assets/{config.excel_file_name}').exists():
-            return pd.read_excel(path)
+            return pd.read_excel(path, index_col=0)
         else:
             return pd.DataFrame(columns=EXCEL_COLUMNS)
 

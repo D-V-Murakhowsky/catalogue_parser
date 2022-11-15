@@ -62,8 +62,8 @@ class GoogleConnector(metaclass=Singleton):
         df = cls._filter_google_table_by_supplier_prefix(df)
         df[config.price_sync_column].fillna(0, inplace=True)
         df[config.price_sync_column] = df[config.price_sync_column].apply(lambda x: x if x != '' else 0.0)
-        df['Код_поставщика'] = df[config.supplier_code_sync_column].apply(lambda x:
-                                                                          x[len(config.supplier_prefix) + 1:])
+        df['Код_поставщика'] = df[config.supplier_code_sync_column]\
+            .apply(lambda x: x[len(config.supplier_prefix) + 1:]).astype('int64')
         df.reset_index(inplace=True, drop=False, names=['row_number'])
         df['row_number'] += 2
         df.drop(inplace=True, columns=['filter_mask'])
