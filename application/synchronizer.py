@@ -1,4 +1,3 @@
-import pathlib
 from typing import NoReturn
 
 import pandas as pd
@@ -88,7 +87,7 @@ class Synchronizer:
         Reads Excel file
         :return: None
         """
-        if (path := pathlib.Path(__file__).parents[1].resolve() / f'assets/{config.excel_file_name}').exists():
+        if (path := config.assets_dir / config.excel_file_name).exists():
             return pd.read_excel(path, index_col=0)
         else:
             return pd.DataFrame(columns=EXCEL_COLUMNS)
@@ -100,4 +99,4 @@ class Synchronizer:
         :param df: data to write
         :return: None
         """
-        df.to_excel(pathlib.Path(__file__).parents[1].resolve() / f'assets/{config.excel_file_name}')
+        df.to_excel(config.assets_dir / config.excel_file_name)

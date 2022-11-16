@@ -1,4 +1,3 @@
-import pathlib
 from typing import NoReturn, Union, Dict
 
 import pandas as pd
@@ -13,8 +12,8 @@ class GoogleConnector(metaclass=Singleton):
 
     def __init__(self):
         try:
-            self.client = pgs.authorize(client_secret=self._get_credentials_dir() / 'client_secret.json',
-                                        credentials_directory=self._get_credentials_dir())
+            self.client = pgs.authorize(client_secret= config.assets_dir / 'client_secret.json',
+                                        credentials_directory=config.assets_dir)
             self.sh = self.client.open(config.google_table_name)
             self.ws = self.sh.worksheet('title', config.sheet_to_sync_name)
             self._processing_columns = [config.code_sync_column,
@@ -24,14 +23,6 @@ class GoogleConnector(metaclass=Singleton):
             self._get_schema()
         except Exception as ex:
             print(f'Exception occurs: {ex}')
-
-    @staticmethod
-    def _get_credentials_dir() -> pathlib.Path:
-        """
-        Get credentials for authorization
-        :return: path to credentials
-        """
-        return pathlib.Path(__file__).parents[1].resolve() / 'assets'
 
     def _get_schema(self) -> NoReturn:
         """

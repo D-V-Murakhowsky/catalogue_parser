@@ -1,12 +1,15 @@
-import pathlib
+import logging
 
 from PySide6.QtCore import Signal, QRunnable, Slot, QObject
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
+from application import config
+from application.google_connector import GoogleConnector
 from application.page_getter import PageGetter
 from application.synchronizer import Synchronizer
-from application.google_connector import GoogleConnector
+
+logger = logging.getLogger('file_logger')
 
 
 class Signaler(QObject):
@@ -45,7 +48,7 @@ class SyncRunner(QRunnable):
     def _create_the_driver():
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        path_to_driver = pathlib.Path(__file__).parents[1].resolve() / 'assets/chromedriver.exe'
-        print(path_to_driver)
+        path_to_driver = config.assets_dir / 'chromedriver.exe'
+        logger.debug(path_to_driver)
         return webdriver.Chrome(executable_path=str(path_to_driver),
                                 options=chrome_options)

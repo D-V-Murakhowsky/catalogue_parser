@@ -6,6 +6,8 @@ from PySide6.QtCore import Slot, QThreadPool
 from application.main_window import Ui_MainWindow
 from application.run_the_sync import SyncRunner
 
+import os
+
 
 class TheWindow(qw.QMainWindow):
     """
