@@ -4,6 +4,9 @@ import os
 import pathlib
 
 
+logger = logging.getLogger('file_logger')
+
+
 class Config:
 
     @property
@@ -73,7 +76,10 @@ class Config:
     def __init__(self):
         self.cwd = pathlib.Path(str(os.getcwd())).resolve()
         filepath = self.cwd / 'assets/data.json'
-        with open(filepath, 'r', encoding='utf-8') as f:
-            self.data = json.load(f)['spartakelectronics.com']
-        logging.getLogger('file_logger').debug('JSON loaded')
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                self.data = json.load(f)['spartakelectronics.com']
+            logger.debug('JSON loaded')
+        except Exception as ex:
+            logger.error(f'{ex} while JSON loading')
 

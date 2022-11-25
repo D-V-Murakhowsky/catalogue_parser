@@ -44,13 +44,12 @@ class ScrapyPageGetter(Spider):
         if response.url == config.catalogue_url:
             start_page, last_page = Parser.get_pages_range(response.text)
             self._signals.page_range.emit(start_page, last_page)
-            yield Request(url=config.catalogue_url, callback=self.get_page)
-            for page_number in range(start_page + 1, 5):
+            for page_number in (range(start_page, last_page) if not config.test_mode else range(start_page, 5)):
                 yield Request(url=f'{config.catalogue_url}?page={page_number}', callback=self.get_page)
 
     def get_page(self, response):
         self.df_list.append(Parser.get_table_from_the_page(response.text))
-        self._signals.page.emit(1)
+        self._signals.page.emit(int(response.url.split('page=')[1]))
 
 
 

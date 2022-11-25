@@ -11,16 +11,8 @@ from application import config
 logger = logging.getLogger('file_logger')
 
 
-class GoogleSignals(QObject):
-    _read_df: Signal = Signal(pd.DataFrame)
-
-    def __getitem__(self, item):
-        return self
-
-
 class GoogleConnector(QRunnable):
     _schema: Union[Dict, None] = None
-    _signals: GoogleSignals = GoogleSignals()
 
     def __init__(self):
         super().__init__()
@@ -56,18 +48,16 @@ class GoogleConnector(QRunnable):
                 columns_numbers = [(k, pgs.Address((None, v + 1), True).label) for v, k in enumerate(df.columns.to_list())]
                 GoogleConnector._schema = dict(filter(lambda x: x[0] in self._processing_columns, columns_numbers))
 
-    def run(self) -> Union[pd.DataFrame, None]:
+    def get_the_df(self) -> Union[pd.DataFrame, None]:
         """
         Gets Google table's sheet into dataframe (just necessary range)
         :return:
         """
-        pass
         if self.ws:
-            df = self._format_google_df(self.ws.get_as_df(end=f'AF{self.ws.rows}',
-                                                                        numerize=True)[self._processing_columns])
-            self._signals._read_df.emit(df)
+            return self._format_google_df(self.ws.get_as_df(end=f'AF{self.ws.rows}',
+                                                            numerize=True)[self._processing_columns])
         else:
-            return self._signals._read_df.emit(pd.DataFrame())
+            return None
 
     @classmethod
     def _format_google_df(cls, df) -> pd.DataFrame:

@@ -1,0 +1,3030 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Каталог</title>
+
+<!-- Fonts -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+
+<link href="/inspinia-v2.5/css/bootstrap.min.css" rel="stylesheet">
+<link href="/inspinia-v2.5/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+<link href="/inspinia-v2.5/css/animate.css" rel="stylesheet">
+<link href="/inspinia-v2.5/css/style.css" rel="stylesheet">
+
+<!-- Pop up messages style -->
+<link href="/inspinia-v2.5/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+<link href="/css/inspinia.css" rel="stylesheet">
+
+<link href="/css/wp_theme.css" rel="stylesheet">
+
+<!-- Extending css -->
+
+<link href="/css/extensions.css" rel="stylesheet">
+
+
+<style type="text/css">div.root-wrapper {min-width: 320px; overflow-x: auto;}</style>
+
+	<!-- FooTable -->
+<link href="/inspinia-v2.5/css/plugins/footable/footable.core.css" rel="stylesheet">
+
+<!-- blueimp-gallery -->
+<link href="/inspinia-v2.5/css/plugins/blueimp/css/blueimp-gallery.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div id="wrapper" class="root-wrapper">
+
+	<nav class="navbar-default navbar-static-side" role="navigation">
+	<div class="sidebar-collapse">
+
+		<ul class="nav metismenu" id="side-menu-tree">
+	<li class="nav-header">
+		<div class="dropdown profile-element">
+
+			<span>
+																						<i class="fa fa-user fa-5x" aria-hidden="true"></i>
+												</span>
+		<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+		<span class="clear">
+			<span class="block m-t-xs"> <strong class="font-bold">2925</strong></span>
+			<span class="text-muted text-xs block">Аккаунт <b class="caret"></b></span>
+		</span>
+		</a>
+
+
+		<ul class="dropdown-menu animated fadeInRight m-t-xs">
+			<li><a href="/ru/account/profile-edit">Профиль</a></li>
+						<li class="divider"></li>
+			<li><a href="/ru/login/logout"><i class="fa fa-sign-out fa-position-left"></i>Выход</a></li>
+		</ul>
+	
+</div>
+<div class="logo-element">
+	B2B </div>	</li>
+	<li>
+		<a href="/ru//">
+			<i class="fa fa-home"></i>
+			<span>Главная</span>
+		</a>
+	</li>
+
+	<li>
+		<a href="/ru/balance/list">
+			<i class="fa fa-money"></i>
+			<span>Баланс</span>
+		</a>
+	</li>
+
+	
+	<li>
+		<a href="/ru/news/list" class="news-list"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Новости</span></a>
+	</li>
+
+	<li class="catalog-categories">
+		<a href="/ru/catalog/list" class="catalog-list category-parent-items"><i class="fa fa-sitemap"></i> <span class="nav-label">Категории</span><span id="root_toggle" class="fa arrow"></span></a>
+
+    <ul class="closed nav nav-second-level collapse">
+        
+        <li>
+            <a href="/ru/catalog/list">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                Все товары            </a>
+        </li>
+        <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=91">
+                                                                                Новинки
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=46">
+                                                                                Лазеры, Брелки, Лампы
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=47">
+                                                                                IPAD Планшетные ПК
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=48">
+                                                                                GPS Навигаторы
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=49">
+                                                                                DVD проигрователи
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=50">
+                                                                                DVR Видеорегистраторы для авто
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=51">
+                                                                                LED ленты, Гирлянды, Контролеры
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=52">
+                                                                                MP3 Плееры и USB накопители (флешки)
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=53">
+                                                                                TV SHOP Товары с ТВ Рекламы
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=54">
+                                                                                Автомобильные товары разное
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=55">
+                                                                                Автомобильные колонки
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=56">
+                                                                                Автомобильные магнитолы
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=57">
+                                                                                Адаптеры и зарядные устройства
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=58">
+                                                                                Аккумуляторы, Батареи, Power bank
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=60">
+                                                                                Весы торговые и кухонные
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=61">
+                                                                                Светодиодные LED вывески, Программируемые табло
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=62">
+                                                                                Калькуляторы
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=63">
+                                                                                Клавиатуры, Мышки
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=64">
+                                                                                Колонки мобильные
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=65">
+                                                                                Массажеры, Тренажеры
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=66">
+                                                                                Микрофоны
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=67">
+                                                                                Мобилльные телефоны
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=68">
+                                                                                Наушники
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=69">
+                                                                                Отпугиватели
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=70">
+                                                                                Подставки и держатели
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=71">
+                                                                                Преобразователи, Инверторы, Зарядные устройства
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=72">
+                                                                                Радиоприемники
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=73">
+                                                                                Разное
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=74">
+                                                                                Видеорегистраторы, Камеры, Домофоны
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=75">
+                                                                                Электронные сигареты
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=76">
+                                                                                Телевизоры и Android приставки
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=77">
+                                                                                Тестеры, мультиметры
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=78">
+                                                                                Тетрисы, Тамагочи, Карманные приставки
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=79">
+                                                                                Усилители звука
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="category-parent-items" href="/ru/catalog/list/?cat=81">
+                                                                                Фонарики
+                                                    <span class="fa arrow inside"></span>
+                                            </a>
+
+                                            <ul class="nav nav-third-level collapse">
+                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=82">
+                                                                                BAILONG Police BL
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=83">
+                                                                                YAJIA YJ
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=84">
+                                                                                GDLITE
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+        
+    
+
+
+
+
+
+
+
+                        </ul>
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=86">
+                                                                                Часы
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=87">
+                                                                                Швейные машинки
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=88">
+                                                                                Шнуры, Переходники, Тройники
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=89">
+                                                                                Резинки Loom Band
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=90">
+                                                                                Моноподы для Селфи
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=92">
+                                                                                Гироборды
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=93">
+                                                                                Spinner \ Спинер \ Волчок
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="category-parent-items" href="/ru/catalog/list/?cat=94">
+                                                                                Бытовабытовая техника
+                                                    <span class="fa arrow inside"></span>
+                                            </a>
+
+                                            <ul class="nav nav-third-level collapse">
+                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=95">
+                                                                                Бутербродницы
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=96">
+                                                                                Пылесосы промышленные
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=97">
+                                                                                Пылесосы бытовые
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=98">
+                                                                                Микроволновки
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=99">
+                                                                                Мультиварки
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=100">
+                                                                                Кофеварки, Кофемашинки, Кофемолки
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=101">
+                                                                                Миксеры, Блендеры
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=102">
+                                                                                Мясорубки, Соковыжималки
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=103">
+                                                                                Плиты газовые и электро
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=104">
+                                                                                Обогреватели и вентиляторы
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=105">
+                                                                                Утюги
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=109">
+                                                                                Вентиляторы
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+        
+    
+
+
+
+
+
+
+
+                        </ul>
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=106">
+                                                                                Кошельки, Сумки, Рюкзаки
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=107">
+                                                                                GUT, PAR. LMM.
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+                                            <li class="" >
+                    <a class="" href="/ru/catalog/list/?cat=108">
+                                                                                Зажигалки
+                                            </a>
+
+                                                        </li>
+
+            
+                    
+        
+    
+
+
+
+
+
+
+
+    </ul>
+
+
+
+
+
+
+
+
+	</li>
+
+	<li>
+		<a href="#"><i class="fa fa-file-text-o"></i> <span class="nav-label">Контент</span> <span class="fa arrow"></span></a>
+
+<ul class="nav nav-second-level collapse">
+
+    
+    
+    
+        
+        <li>
+            <a href="/ru/content/page-detail/1" style="">
+                Загрузки
+            </a>
+        </li>
+            
+        
+        <li>
+            <a href="/ru/content/page-detail/2" style="">
+                vcb
+            </a>
+        </li>
+            
+
+</ul>
+	</li>
+</ul>
+
+
+	</div>
+</nav>
+
+	<div id="page-wrapper" class="gray-bg dashbard-1">
+		<div class="row border-bottom">
+			<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+				<div class="navbar-header">
+	<a class="navbar-minimalize m-t-sm minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+
+</div>
+
+<ul class="nav navbar-top-links navbar-right m-l-md">
+	
+	
+	
+		<li>
+		<span class="count-info" title="Баланс">
+			<i class="fa fa-balance-scale" aria-hidden="true"></i>
+			<span class="ajax-cart-count label label-danger">-705.53</span>
+		</span>
+	</li>
+
+	<li>
+		<span class="count-info" title="Курс валют">
+			<i class="fa fa-money" aria-hidden="true"></i>
+			<span class="ajax-cart-count label label-primary">43.5</span>
+		</span>
+	</li>
+
+	<li>
+		<a href="/ru/cart" class="count-info" title="Корзина">
+			<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			<span class="ajax-cart-count label label-warning">0</span>
+		</a>
+	</li>
+
+	<li>
+		<a href="/ru/cart?tab=wishlist" class="count-info" title="Избранное">
+			<i class="fa fa-heart" aria-hidden="true"></i>
+			<span class="label label-warning">0</span>
+		</a>
+	</li>
+
+	
+	<li>
+
+	</li>
+		<select id="currency_switcher" class="label label-info m-r-sm">
+								<option value="980" >
+				UAH-
+			</option>
+								<option value="840" selected>
+				UAH+
+			</option>
+			</select>
+	<li>
+		<!-- Authentication Links -->
+	<a href="/ru/login/logout"><i class="fa fa-sign-out"></i><span class="nav-label"> Выход</span></a>
+	</li>
+	</ul>
+
+<a href="/ru/order" class="btn-xs btn-primary pull-right m-t-md m-l-md" title="Заказы">
+	<span>Заказы</span>
+	<span class="label label-primary">19</span>
+</a>
+<form id="form_catalog_quick_search" role="search" class="navbar-form-custom" action="/ru/catalog/list" autocomplete="off">
+	<input type="hidden" name="_token" value="BCA4RKyJNZpI2wjk8b5wZoiAKEq704Ot0m85KFgU">
+
+	<div class="form-group dropdown navbar-top-links">
+		<input id="input_catalog_quick_search" name="product_name" type="text" placeholder="Быстрый поиск..." data-toggle="dropdown" class="single-line m-t-sm dropdown-toggle">
+
+		<ul id="quick_search_products_container" class="dropdown-menu dropdown-messages" style="max-height: 300px; overflow-y: auto;">
+
+			<li>
+			<div class="dropdown-messages-box">
+				Введите запрос...			</div>
+		</li>
+		<li class="divider"></li>
+	</ul>
+	</div>
+</form>
+			</nav>
+		</div>
+
+		<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Каталог</h2>
+        <ol class="breadcrumb">
+                                                <li>
+                        <a href="/">Главная</a>
+                    </li>
+                                                                <li class="active">
+                        <strong>Каталог</strong>
+                    </li>
+                                    </ol>
+    </div>
+</div>
+		
+	
+	<div class="wrapper wrapper-content animated fadeInRight ecommerce">
+
+						
+
+
+		<div class="ibox-content m-b-sm border-bottom">
+			<form action="/ru/catalog/list" method="GET">
+
+				
+				<div class="row">
+					<div class="col-lg-3 clearfix">
+						<div class="form-group">
+							<label class="control-label" for="product_name">Название товара</label>
+							<input type="text" id="product_name" name="product_name" value="" placeholder="Название товара" class="form-control">
+						</div>
+					</div>
+					<div class="col-lg-2 col-sm-6 clearfix">
+						<div class="form-group clearfix">
+							<label class="control-label col-xs-12 text-center" for="price">Цена</label>
+							<div class="col-xs-6 no-padding">
+								<input type="number" id="price_min" name="price_min" step="0.01" min="0" value="" placeholder="От" class="form-control col-sm-6">
+							</div>
+							<div class="col-xs-6 no-padding">
+								<input type="number" id="price_max" name="price_max" step="0.01" min="0" value="" placeholder="До" class="form-control col-sm-6">
+							</div>
+						</div>
+					</div>
+															<div class="col-lg-2 col-sm-6 clearfix">
+						<div class="form-group">
+							<label class="control-label" for="status">Доступность</label>
+							<select name="store_status" id="store_status" class="form-control">
+
+								
+								<option value="0"
+										>Все								</option>
+
+																	<option value="1"
+											>
+										Есть в наличии
+									</option>
+																	<option value="2"
+											>
+										Нет в наличии
+									</option>
+																	<option value="3"
+											>
+										Заканчивается
+									</option>
+								
+							</select>
+						</div>
+					</div>
+
+					
+					<div class="col-lg-4 clearfix">
+						<div class="form-group col-lg-12 col-sm-6 col-xs-8 m-t-sm clearfix">
+							<div class="btn-group m-b-sm m-t-md" role="group" aria-label="...">
+								<button type="submit" class="btn btn-xs btn-primary">
+									<span>Фильтровать</span>
+								</button>
+								<a class="btn btn-xs btn-white" href="/ru/catalog/list"><span>Очистить</span></a>
+								<a class="btn btn-xs btn-white" href="/ru/catalog/price-list"><span>Прайслист</span></a>
+							</div>
+						</div>
+					</div>
+									</div>
+			</form>
+		</div>
+
+
+
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="ibox">
+										<div class="ibox-content">
+
+						<table class="footable table table-stripped toggle-arrow-tiny" data-page-navigation=".pagination-custom" data-page-size="50">							<thead>
+							<tr>
+
+								<th data-hide="phone" data-sort-ignore="true"></th>
+								<th data-toggle="true">Название товара</th>
+								<th data-hide="all">Описание</th>
+								<th>Арт.</th>
+								<th>Цена</th>
+								<th data-hide="phone">Доступность</th>
+																<th class="text-right" data-sort-ignore="true">Действие</th>
+
+							</tr>
+							</thead>
+							<tbody>
+
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1873">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/5/b/5bebfb8a-97e4-11e5-9137-40167ea8ff37.jpeg"
+																	   title="Xmas гирлянда LED 100L LED B (100)"
+																	   data-gallery="#blueimp-gallery-prodgall1873"
+																	   class="">
+
+																			<img src="/media/catalog/product/5/b/5bebfb8a-97e4-11e5-9137-40167ea8ff37.jpeg"
+																				 alt="Xmas гирлянда LED 100L LED B (100)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Xmas гирлянда LED 100L LED B (100)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>2501</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">1.13 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1873">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1874">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/5/b/5bebfb8b-97e4-11e5-9137-40167ea8ff37.jpeg"
+																	   title="Xmas гирлянда LED 100L LED M (100)"
+																	   data-gallery="#blueimp-gallery-prodgall1874"
+																	   class="">
+
+																			<img src="/media/catalog/product/5/b/5bebfb8b-97e4-11e5-9137-40167ea8ff37.jpeg"
+																				 alt="Xmas гирлянда LED 100L LED M (100)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Xmas гирлянда LED 100L LED M (100)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>2500</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">1.13 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1874">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1875">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/5/b/5bebfb8c-97e4-11e5-9137-40167ea8ff37.jpeg"
+																	   title="Xmas гирлянда LED 120P NET B 1.5M*1.5M Сетка Синяя (100)"
+																	   data-gallery="#blueimp-gallery-prodgall1875"
+																	   class="">
+
+																			<img src="/media/catalog/product/5/b/5bebfb8c-97e4-11e5-9137-40167ea8ff37.jpeg"
+																				 alt="Xmas гирлянда LED 120P NET B 1.5M*1.5M Сетка Синяя (100)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Xmas гирлянда LED 120P NET B 1.5M*1.5M Сетка Синяя (100)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>2488</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">3.15 UAH+</span>
+																																																				</td>
+									
+									<td>
+																				<span >1  шт.</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" name="qty" class="add-to-cart-product-qty" min="0" placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left">
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span product_id="1875" class="add-to-cart-btn ajax-cart-load-btn btn-white btn btn-xs">
+													<i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину												</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1875">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1876">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/5/b/5bebfb8d-97e4-11e5-9137-40167ea8ff37.jpeg"
+																	   title="Xmas гирлянда LED 120P NET W 1.5M*1.5M Cетка Белая (100)"
+																	   data-gallery="#blueimp-gallery-prodgall1876"
+																	   class="">
+
+																			<img src="/media/catalog/product/5/b/5bebfb8d-97e4-11e5-9137-40167ea8ff37.jpeg"
+																				 alt="Xmas гирлянда LED 120P NET W 1.5M*1.5M Cетка Белая (100)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Xmas гирлянда LED 120P NET W 1.5M*1.5M Cетка Белая (100)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>0151</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">3.15 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1876">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1877">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/5/b/5bebfb8e-97e4-11e5-9137-40167ea8ff37.jpeg"
+																	   title="tof mini cam pir"
+																	   data-gallery="#blueimp-gallery-prodgall1877"
+																	   class="">
+
+																			<img src="/media/catalog/product/5/b/5bebfb8e-97e4-11e5-9137-40167ea8ff37.jpeg"
+																				 alt="tof mini cam pir" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										tof mini cam pir									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>2489</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">3.10 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1877">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1878">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/3/b/3bbae4f0-1837-11ec-8bc2-000c2912119d.jpeg"
+																	   title="Говорящий хомяк (100)"
+																	   data-gallery="#blueimp-gallery-prodgall1878"
+																	   class="">
+
+																			<img src="/media/catalog/product/3/b/3bbae4f0-1837-11ec-8bc2-000c2912119d.jpeg"
+																				 alt="Говорящий хомяк (100)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Говорящий хомяк (100)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>0123</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">3.83 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1878">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1879">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/5/b/5bebfb90-97e4-11e5-9137-40167ea8ff37.jpeg"
+																	   title="tof cam 480p"
+																	   data-gallery="#blueimp-gallery-prodgall1879"
+																	   class="">
+
+																			<img src="/media/catalog/product/5/b/5bebfb90-97e4-11e5-9137-40167ea8ff37.jpeg"
+																				 alt="tof cam 480p" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										tof cam 480p									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>2490</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">3.10 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1879">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1880">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/5/b/5bebfb91-97e4-11e5-9137-40167ea8ff37.jpeg"
+																	   title="Xmas гирлянда LED 156L LED B (60)"
+																	   data-gallery="#blueimp-gallery-prodgall1880"
+																	   class="">
+
+																			<img src="/media/catalog/product/5/b/5bebfb91-97e4-11e5-9137-40167ea8ff37.jpeg"
+																				 alt="Xmas гирлянда LED 156L LED B (60)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Xmas гирлянда LED 156L LED B (60)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>2502</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">1.65 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1880">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1881">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/5/b/5bebfb92-97e4-11e5-9137-40167ea8ff37.jpeg"
+																	   title="Xmas гирлянда LED 180 NET B 2M*2M Сетка Синяя (60)"
+																	   data-gallery="#blueimp-gallery-prodgall1881"
+																	   class="">
+
+																			<img src="/media/catalog/product/5/b/5bebfb92-97e4-11e5-9137-40167ea8ff37.jpeg"
+																				 alt="Xmas гирлянда LED 180 NET B 2M*2M Сетка Синяя (60)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Xmas гирлянда LED 180 NET B 2M*2M Сетка Синяя (60)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>0159</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">4.46 UAH+</span>
+																																																				</td>
+									
+									<td>
+																				<span >1  шт.</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" name="qty" class="add-to-cart-product-qty" min="0" placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left">
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span product_id="1881" class="add-to-cart-btn ajax-cart-load-btn btn-white btn btn-xs">
+													<i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину												</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1881">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1882">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/8/4/841391ec-caae-11e7-9a12-180373ba3c2c.jpeg"
+																	   title="Xmas гирлянда LED 180 NET W 2M*2M Сетка Белая (60)"
+																	   data-gallery="#blueimp-gallery-prodgall1882"
+																	   class="">
+
+																			<img src="/media/catalog/product/8/4/841391ec-caae-11e7-9a12-180373ba3c2c.jpeg"
+																				 alt="Xmas гирлянда LED 180 NET W 2M*2M Сетка Белая (60)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Xmas гирлянда LED 180 NET W 2M*2M Сетка Белая (60)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>0144</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">4.46 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1882">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1883">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/d/3/d3ec2afc-cc8d-11e5-9f70-40167ea8ff37.jpeg"
+																	   title="Шнур 3 RCA IN 1 RCA OUT (50)"
+																	   data-gallery="#blueimp-gallery-prodgall1883"
+																	   class="">
+
+																			<img src="/media/catalog/product/d/3/d3ec2afc-cc8d-11e5-9f70-40167ea8ff37.jpeg"
+																				 alt="Шнур 3 RCA IN 1 RCA OUT (50)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Шнур 3 RCA IN 1 RCA OUT (50)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>2359</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">1.16 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1883">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1884">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/5/b/5bebfb94-97e4-11e5-9137-40167ea8ff37.jpeg"
+																	   title="Xmas гирлянда LED 320 BY в виде флага Украины (40)"
+																	   data-gallery="#blueimp-gallery-prodgall1884"
+																	   class="">
+
+																			<img src="/media/catalog/product/5/b/5bebfb94-97e4-11e5-9137-40167ea8ff37.jpeg"
+																				 alt="Xmas гирлянда LED 320 BY в виде флага Украины (40)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Xmas гирлянда LED 320 BY в виде флага Украины (40)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>2495</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">5.05 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1884">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1885">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/b/9/b9af0b26-36dd-11eb-934a-000c2912119d.png"
+																	   title="Xmas гирлянда LED 40P WW-7 МИКС Теплый белый (Продается только ящиком!!!) (100)"
+																	   data-gallery="#blueimp-gallery-prodgall1885"
+																	   class="">
+
+																			<img src="/media/catalog/product/b/9/b9af0b26-36dd-11eb-934a-000c2912119d.png"
+																				 alt="Xmas гирлянда LED 40P WW-7 МИКС Теплый белый (Продается только ящиком!!!) (100)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Xmas гирлянда LED 40P WW-7 МИКС Теплый белый (Продается только ящиком!!!) (100)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>0169</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">1.47 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1885">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1886">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/5/b/5bebfb96-97e4-11e5-9137-40167ea8ff37.jpeg"
+																	   title="Xmas гирлянда LED 40P B2 (100)"
+																	   data-gallery="#blueimp-gallery-prodgall1886"
+																	   class="">
+
+																			<img src="/media/catalog/product/5/b/5bebfb96-97e4-11e5-9137-40167ea8ff37.jpeg"
+																				 alt="Xmas гирлянда LED 40P B2 (100)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Xmas гирлянда LED 40P B2 (100)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>2491</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">2.06 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1886">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1887">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/1/f/1f546981-c2ad-11e7-84f9-180373ba3c2c.jpeg"
+																	   title="Xmas гирлянда LED 40P B3 (100)"
+																	   data-gallery="#blueimp-gallery-prodgall1887"
+																	   class="">
+
+																			<img src="/media/catalog/product/1/f/1f546981-c2ad-11e7-84f9-180373ba3c2c.jpeg"
+																				 alt="Xmas гирлянда LED 40P B3 (100)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+															
+																
+																
+																																				<a href="/media/catalog/product/5/b/5bebfb97-97e4-11e5-9137-40167ea8ff37.jpeg"
+																			   title="Xmas гирлянда LED 40P B3 (100)"
+																			   data-gallery="#blueimp-gallery-prodgall1887"
+																			   class="hide">
+
+																				<img data-original="/media/catalog/product/5/b/5bebfb97-97e4-11e5-9137-40167ea8ff37.jpeg"
+																					 alt="Xmas гирлянда LED 40P B3 (100)"
+																					 width="75px"
+																					 class="lazy">
+																			</a>
+																	
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Xmas гирлянда LED 40P B3 (100)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>2492</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">1.54 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1887">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1888">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/5/b/5bebfb98-97e4-11e5-9137-40167ea8ff37.jpeg"
+																	   title="Xmas гирлянда LED 40P T4 Withe small parts (100)"
+																	   data-gallery="#blueimp-gallery-prodgall1888"
+																	   class="">
+
+																			<img src="/media/catalog/product/5/b/5bebfb98-97e4-11e5-9137-40167ea8ff37.jpeg"
+																				 alt="Xmas гирлянда LED 40P T4 Withe small parts (100)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Xmas гирлянда LED 40P T4 Withe small parts (100)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>2493</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">1.75 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1888">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1889">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/e/b/ebfc6fe2-082c-11ea-b039-000c2912119d.jpeg"
+																	   title="Xmas гирлянда LED 40P T5 Withe small parts (100)"
+																	   data-gallery="#blueimp-gallery-prodgall1889"
+																	   class="">
+
+																			<img src="/media/catalog/product/e/b/ebfc6fe2-082c-11ea-b039-000c2912119d.jpeg"
+																				 alt="Xmas гирлянда LED 40P T5 Withe small parts (100)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Xmas гирлянда LED 40P T5 Withe small parts (100)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>2494</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">1.47 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1889">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1890">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/5/e/5ecb357b-1e42-11e5-a9f1-40167ea8ff37.jpeg"
+																	   title="AE 810 A DERMA SETE (24) в уп. 24шт."
+																	   data-gallery="#blueimp-gallery-prodgall1890"
+																	   class="">
+
+																			<img src="/media/catalog/product/5/e/5ecb357b-1e42-11e5-a9f1-40167ea8ff37.jpeg"
+																				 alt="AE 810 A DERMA SETE (24) в уп. 24шт." width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+															
+																
+																
+																																				<a href="/media/catalog/product/5/e/5ecb357a-1e42-11e5-a9f1-40167ea8ff37.jpeg"
+																			   title="AE 810 A DERMA SETE (24) в уп. 24шт."
+																			   data-gallery="#blueimp-gallery-prodgall1890"
+																			   class="hide">
+
+																				<img data-original="/media/catalog/product/5/e/5ecb357a-1e42-11e5-a9f1-40167ea8ff37.jpeg"
+																					 alt="AE 810 A DERMA SETE (24) в уп. 24шт."
+																					 width="75px"
+																					 class="lazy">
+																			</a>
+																	
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										AE 810 A DERMA SETE (24) в уп. 24шт.									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>0345</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">4.20 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1890">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1891">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/e/a/ea112984-d7ba-11e5-b7be-40167ea8ff37.jpeg"
+																	   title="BEAUTY FOOT (50)"
+																	   data-gallery="#blueimp-gallery-prodgall1891"
+																	   class="">
+
+																			<img src="/media/catalog/product/e/a/ea112984-d7ba-11e5-b7be-40167ea8ff37.jpeg"
+																				 alt="BEAUTY FOOT (50)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										BEAUTY FOOT (50)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>2582</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">5.36 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1891">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+															
+																											
+																																								
+								
+								<tr>
+									<td width="90">
+
+																					
+											
+												<div id="prodgall1892">
+
+													
+													
+																															
+																																	<a href="/media/catalog/product/a/e/ae125a24-4fa3-11e5-8e8a-40167ea8ff37.jpeg"
+																	   title="Bluethooth гарнитура N98 (100)"
+																	   data-gallery="#blueimp-gallery-prodgall1892"
+																	   class="">
+
+																			<img src="/media/catalog/product/a/e/ae125a24-4fa3-11e5-8e8a-40167ea8ff37.jpeg"
+																				 alt="Bluethooth гарнитура N98 (100)" width="75px"
+																				 class="">
+
+																	</a>
+																
+															
+															
+													
+															
+																
+																
+																																				<a href="/media/catalog/product/a/e/ae125a25-4fa3-11e5-8e8a-40167ea8ff37.jpeg"
+																			   title="Bluethooth гарнитура N98 (100)"
+																			   data-gallery="#blueimp-gallery-prodgall1892"
+																			   class="hide">
+
+																				<img data-original="/media/catalog/product/a/e/ae125a25-4fa3-11e5-8e8a-40167ea8ff37.jpeg"
+																					 alt="Bluethooth гарнитура N98 (100)"
+																					 width="75px"
+																					 class="lazy">
+																			</a>
+																	
+																
+															
+															
+													
+												</div>
+																					
+									</td>
+									<td>
+										Bluethooth гарнитура N98 (100)									</td>
+									<td>
+																																																				
+									</td>
+
+									<td><span>2287</span></td>
+
+									<td>
+																				
+																																									
+																															
+
+																																	<span class="price">3.99 UAH+</span>
+																																																				</td>
+									
+									<td>
+																														<span class="label label-danger">Нет в наличии</span>
+																			</td>
+
+																											
+									<td class="text-right">
+																				<div class="btn-group">
+																							<input type="number" class="add-to-cart-product-qty btn-white btn btn-xs disabled" disabled placeholder="Количество" value="1">
+
+																								<select class="add-to-cart-product-unit-type pull-left disabled" disabled>
+																											
+														<option value="1">шт</option>
+																											
+														<option value="2">ящик</option>
+																									</select>
+												<br>
+												
+												<span class="ajax-cart-load-btn btn-white btn btn-xs disabled" disabled><i class="fa fa-btn fa-shopping-cart fa-position-left"></i>В корзину</span>
+																						<a class="btn-white btn btn-xs" href="/ru/catalog/product/1892">Подробнее</a>
+																																</div>
+																			</td>
+								</tr>
+							
+							</tbody>
+							<tfoot>
+							<tr>
+								<td colspan="6">
+																		<ul class="pagination"><li class="disabled"><span>&laquo;</span></li> <li class="active"><span>1</span></li><li><a href="http://b2b.spartakelectronics.com/ru/catalog/list?page=2">2</a></li><li><a href="http://b2b.spartakelectronics.com/ru/catalog/list?page=3">3</a></li><li><a href="http://b2b.spartakelectronics.com/ru/catalog/list?page=4">4</a></li><li><a href="http://b2b.spartakelectronics.com/ru/catalog/list?page=5">5</a></li><li><a href="http://b2b.spartakelectronics.com/ru/catalog/list?page=6">6</a></li><li><a href="http://b2b.spartakelectronics.com/ru/catalog/list?page=7">7</a></li><li><a href="http://b2b.spartakelectronics.com/ru/catalog/list?page=8">8</a></li><li class="disabled"><span>...</span></li><li><a href="http://b2b.spartakelectronics.com/ru/catalog/list?page=307">307</a></li><li><a href="http://b2b.spartakelectronics.com/ru/catalog/list?page=308">308</a></li> <li><a href="http://b2b.spartakelectronics.com/ru/catalog/list?page=2" rel="next">&raquo;</a></li></ul>
+								</td>
+							</tr>
+							</tfoot>
+						</table>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="product-removal-confirmation-container">
+		<div class="product-removal-confirmation-form-container">
+			<div class="close-product-removal-confirmation-container">x</div>
+			<div class="product-removal-form-label">Введите пароль вашей учётной записи</div>
+			<div  class="product-removal-form-wrapper">
+				<form action="/ru/catalog/delete-product" method="POST" id="product-removal-form">
+					<input type="hidden" name="_token" value="BCA4RKyJNZpI2wjk8b5wZoiAKEq704Ot0m85KFgU">
+					<input type="password" name="password" value="">
+					<input type="hidden" name="pid" value="">
+					<button form="product-removal-form" type="submit">Удалить товар</button>
+				</form>
+			</div>
+		</div>    
+	</div>
+	
+	<div id="blueimp-gallery" class="blueimp-gallery">
+		<div class="slides"></div>
+		<h3 class="title"></h3>
+		<a class="prev">‹</a>
+		<a class="next">›</a>
+		<a class="close">×</a>
+		<a class="play-pause"></a>
+		<ol class="indicator"></ol>
+	</div>
+	
+	</div>
+
+	<div id="right-sidebar">
+
+		<div class="sidebar-container">
+
+	<ul class="nav nav-tabs navs-3">
+
+		<li class="active"><a data-toggle="tab" href="#tab-1">
+				Notes
+			</a></li>
+		<li><a data-toggle="tab" href="#tab-2">
+				Projects
+			</a></li>
+		<li class=""><a data-toggle="tab" href="#tab-3">
+				<i class="fa fa-gear"></i>
+			</a></li>
+	</ul>
+
+	<div class="tab-content">
+
+
+		<div id="tab-1" class="tab-pane active">
+
+			<div class="sidebar-title">
+				<h3><i class="fa fa-comments-o"></i> Latest Notes</h3>
+				<small><i class="fa fa-tim"></i> You have 10 new message.</small>
+			</div>
+
+			<div>
+
+				<div class="sidebar-message">
+					<a href="#">
+						<div class="pull-left text-center">
+							<img alt="image" class="img-circle message-avatar" src="/inspinia-v2.5/img/a1.jpg">
+
+							<div class="m-t-xs">
+								<i class="fa fa-star text-warning"></i>
+								<i class="fa fa-star text-warning"></i>
+							</div>
+						</div>
+						<div class="media-body">
+
+							There are many variations of passages of Lorem Ipsum available.
+							<br>
+							<small class="text-muted">Today 4:21 pm</small>
+						</div>
+					</a>
+				</div>
+				<div class="sidebar-message">
+					<a href="#">
+						<div class="pull-left text-center">
+							<img alt="image" class="img-circle message-avatar" src="/inspinia-v2.5/img/a2.jpg">
+						</div>
+						<div class="media-body">
+							The point of using Lorem Ipsum is that it has a more-or-less normal.
+							<br>
+							<small class="text-muted">Yesterday 2:45 pm</small>
+						</div>
+					</a>
+				</div>
+				<div class="sidebar-message">
+					<a href="#">
+						<div class="pull-left text-center">
+							<img alt="image" class="img-circle message-avatar" src="/inspinia-v2.5/img/a3.jpg">
+
+							<div class="m-t-xs">
+								<i class="fa fa-star text-warning"></i>
+								<i class="fa fa-star text-warning"></i>
+								<i class="fa fa-star text-warning"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							Mevolved over the years, sometimes by accident, sometimes on purpose (injected humour and
+							the like).
+							<br>
+							<small class="text-muted">Yesterday 1:10 pm</small>
+						</div>
+					</a>
+				</div>
+				<div class="sidebar-message">
+					<a href="#">
+						<div class="pull-left text-center">
+							<img alt="image" class="img-circle message-avatar" src="/inspinia-v2.5/img/a4.jpg">
+						</div>
+
+						<div class="media-body">
+							Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
+							<br>
+							<small class="text-muted">Monday 8:37 pm</small>
+						</div>
+					</a>
+				</div>
+				<div class="sidebar-message">
+					<a href="#">
+						<div class="pull-left text-center">
+							<img alt="image" class="img-circle message-avatar" src="/inspinia-v2.5/img/a8.jpg">
+						</div>
+						<div class="media-body">
+
+							All the Lorem Ipsum generators on the Internet tend to repeat.
+							<br>
+							<small class="text-muted">Today 4:21 pm</small>
+						</div>
+					</a>
+				</div>
+				<div class="sidebar-message">
+					<a href="#">
+						<div class="pull-left text-center">
+							<img alt="image" class="img-circle message-avatar" src="/inspinia-v2.5/img/a7.jpg">
+						</div>
+						<div class="media-body">
+							Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a
+							line in section 1.10.32.
+							<br>
+							<small class="text-muted">Yesterday 2:45 pm</small>
+						</div>
+					</a>
+				</div>
+				<div class="sidebar-message">
+					<a href="#">
+						<div class="pull-left text-center">
+							<img alt="image" class="img-circle message-avatar" src="/inspinia-v2.5/img/a3.jpg">
+
+							<div class="m-t-xs">
+								<i class="fa fa-star text-warning"></i>
+								<i class="fa fa-star text-warning"></i>
+								<i class="fa fa-star text-warning"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							The standard chunk of Lorem Ipsum used since the 1500s is reproduced below.
+							<br>
+							<small class="text-muted">Yesterday 1:10 pm</small>
+						</div>
+					</a>
+				</div>
+				<div class="sidebar-message">
+					<a href="#">
+						<div class="pull-left text-center">
+							<img alt="image" class="img-circle message-avatar" src="/inspinia-v2.5/img/a4.jpg">
+						</div>
+						<div class="media-body">
+							Uncover many web sites still in their infancy. Various versions have.
+							<br>
+							<small class="text-muted">Monday 8:37 pm</small>
+						</div>
+					</a>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="tab-2" class="tab-pane">
+
+			<div class="sidebar-title">
+				<h3><i class="fa fa-cube"></i> Latest projects</h3>
+				<small><i class="fa fa-tim"></i> You have 14 projects. 10 not completed.</small>
+			</div>
+
+			<ul class="sidebar-list">
+				<li>
+					<a href="#">
+						<div class="small pull-right m-t-xs">9 hours ago</div>
+						<h4>Business valuation</h4>
+						It is a long established fact that a reader will be distracted.
+
+						<div class="small">Completion with: 22%</div>
+						<div class="progress progress-mini">
+							<div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
+						</div>
+						<div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="small pull-right m-t-xs">9 hours ago</div>
+						<h4>Contract with Company </h4>
+						Many desktop publishing packages and web page editors.
+
+						<div class="small">Completion with: 48%</div>
+						<div class="progress progress-mini">
+							<div style="width: 48%;" class="progress-bar"></div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="small pull-right m-t-xs">9 hours ago</div>
+						<h4>Meeting</h4>
+						By the readable content of a page when looking at its layout.
+
+						<div class="small">Completion with: 14%</div>
+						<div class="progress progress-mini">
+							<div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="label label-primary pull-right">NEW</span>
+						<h4>The generated</h4>
+						<!--<div class="small pull-right m-t-xs">9 hours ago</div>-->
+						There are many variations of passages of Lorem Ipsum available.
+						<div class="small">Completion with: 22%</div>
+						<div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="small pull-right m-t-xs">9 hours ago</div>
+						<h4>Business valuation</h4>
+						It is a long established fact that a reader will be distracted.
+
+						<div class="small">Completion with: 22%</div>
+						<div class="progress progress-mini">
+							<div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
+						</div>
+						<div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="small pull-right m-t-xs">9 hours ago</div>
+						<h4>Contract with Company </h4>
+						Many desktop publishing packages and web page editors.
+
+						<div class="small">Completion with: 48%</div>
+						<div class="progress progress-mini">
+							<div style="width: 48%;" class="progress-bar"></div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="small pull-right m-t-xs">9 hours ago</div>
+						<h4>Meeting</h4>
+						By the readable content of a page when looking at its layout.
+
+						<div class="small">Completion with: 14%</div>
+						<div class="progress progress-mini">
+							<div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="label label-primary pull-right">NEW</span>
+						<h4>The generated</h4>
+						<!--<div class="small pull-right m-t-xs">9 hours ago</div>-->
+						There are many variations of passages of Lorem Ipsum available.
+						<div class="small">Completion with: 22%</div>
+						<div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+					</a>
+				</li>
+
+			</ul>
+
+		</div>
+
+		<div id="tab-3" class="tab-pane">
+
+			<div class="sidebar-title">
+				<h3><i class="fa fa-gears"></i> Settings</h3>
+				<small><i class="fa fa-tim"></i> You have 14 projects. 10 not completed.</small>
+			</div>
+
+			<div class="setings-item">
+                    <span>
+                        Show notifications
+                    </span>
+				<div class="switch">
+					<div class="onoffswitch">
+						<input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
+						<label class="onoffswitch-label" for="example">
+							<span class="onoffswitch-inner"></span>
+							<span class="onoffswitch-switch"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="setings-item">
+                    <span>
+                        Disable Chat
+                    </span>
+				<div class="switch">
+					<div class="onoffswitch">
+						<input type="checkbox" name="collapsemenu" checked class="onoffswitch-checkbox" id="example2">
+						<label class="onoffswitch-label" for="example2">
+							<span class="onoffswitch-inner"></span>
+							<span class="onoffswitch-switch"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="setings-item">
+                    <span>
+                        Enable history
+                    </span>
+				<div class="switch">
+					<div class="onoffswitch">
+						<input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
+						<label class="onoffswitch-label" for="example3">
+							<span class="onoffswitch-inner"></span>
+							<span class="onoffswitch-switch"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="setings-item">
+                    <span>
+                        Show charts
+                    </span>
+				<div class="switch">
+					<div class="onoffswitch">
+						<input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
+						<label class="onoffswitch-label" for="example4">
+							<span class="onoffswitch-inner"></span>
+							<span class="onoffswitch-switch"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="setings-item">
+                    <span>
+                        Offline users
+                    </span>
+				<div class="switch">
+					<div class="onoffswitch">
+						<input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox" id="example5">
+						<label class="onoffswitch-label" for="example5">
+							<span class="onoffswitch-inner"></span>
+							<span class="onoffswitch-switch"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="setings-item">
+                    <span>
+                        Global search
+                    </span>
+				<div class="switch">
+					<div class="onoffswitch">
+						<input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox" id="example6">
+						<label class="onoffswitch-label" for="example6">
+							<span class="onoffswitch-inner"></span>
+							<span class="onoffswitch-switch"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="setings-item">
+                    <span>
+                        Update everyday
+                    </span>
+				<div class="switch">
+					<div class="onoffswitch">
+						<input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
+						<label class="onoffswitch-label" for="example7">
+							<span class="onoffswitch-inner"></span>
+							<span class="onoffswitch-switch"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+
+			<div class="sidebar-content">
+				<h4>Settings</h4>
+				<div class="small">
+					I belive that. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					And typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+					1500s.
+					Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+	</div>
+</div>
+
+
+<div class="footer-last-row">
+
+	<span class="footer-col-one footer-col">© 2016</span>
+
+	<script type="text/javascript">
+		//<![CDATA[
+		var TOKEN = 'BCA4RKyJNZpI2wjk8b5wZoiAKEq704Ot0m85KFgU';
+		//]]>
+	</script>
+
+	<!-- Mainly scripts -->
+	<script src="/inspinia-v2.5/js/jquery-2.1.1.js"></script>
+	<script src="/inspinia-v2.5/js/bootstrap.min.js"></script>
+	<script src="/inspinia-v2.5/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="/inspinia-v2.5/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="https://unpkg.com/@reactivex/rxjs@6.3.3/dist/global/rxjs.umd.min.js"></script>
+
+	<!-- Custom and plugin javascript -->
+	<script src="/inspinia-v2.5/js/inspinia.js"></script>
+	<script src="/inspinia-v2.5/js/plugins/pace/pace.min.js"></script>
+
+	<!-- Polifill -->
+	<script src="/js/polifill.js"></script>
+
+	<!-- Currency switcher -->
+	<script src="/js/currency.switcher.js"></script>
+
+	<!-- Catalog quick search -->
+	<script src="/js/catalog.quick.search.js"></script>
+	
+	<!-- Order quick search -->
+	<script src="/js/order.quick.search.js"></script>
+	
+	<!-- Popup messages -->
+	<script src="/inspinia-v2.5/js/plugins/toastr/toastr.min.js"></script>
+
+	<!-- Data picker -->
+	<script src="/inspinia-v2.5/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+	<!-- Ajax cart loader -->
+	<script src="/js/ajax-cart.js"></script>
+
+	<!-- Ajax menu tree -->
+	<script src="/js/ajax-menu-tree.js"></script>
+
+	<script>
+		$(document).ready(function () {
+
+			/* Currency switcher */
+			var currencySwitcher = new ObjCurrencySwitcher('ru');
+			currencySwitcher.onChangeCurrencySwitcherSelect();
+
+			/* Catalog quick search */
+			var catalogQuickSearch = new ObjCatalogQuickSearch();
+			catalogQuickSearch.setLang('ru');
+			catalogQuickSearch.setSearchQueryMinLength('3');
+			catalogQuickSearch.setSearchQueryMinLengthMessage('Минимальная длина поискового запроса - 3 (символов)');
+			catalogQuickSearch.onKeydownSearchInput();
+			catalogQuickSearch.onClickSearchResultsContainer();
+			
+			/* Order quick search */
+			var orderQuickSearch = new ObjOrderQuickSearch();
+			orderQuickSearch.setLang('ru');
+			orderQuickSearch.setSearchQueryMinLength('3');
+			orderQuickSearch.setSearchQueryMinLengthMessage('Минимальная длина поискового запроса - 3 (символов)');
+			orderQuickSearch.onKeydownSearchInput();
+			orderQuickSearch.onClickSearchResultsContainer();
+
+			/* Ajax cart helper */
+			var ajaxCartHelper = new AjaxCartHelper('ru');
+			ajaxCartHelper.onClickAddToCartBtn();
+			ajaxCartHelper.onClickRemoveFromCartBtn();
+
+
+			$('#side-menu-tree').metisMenu({ toggle: false });
+
+			/* Date picker */
+			$('.input-group.date').datepicker({
+				format: 'yyyy-mm-dd',
+				todayBtn: "linked",
+				changeYear: true,
+				keyboardNavigation: false,
+				forceParse: false,
+				calendarWeeks: true,
+				autoclose: true,
+				language: 'ru'
+			});
+
+			$('.input-group.date.today').datepicker(
+					'setDate', 'today');
+
+			// Add slimscroll to element
+			$('.scroll_content').slimscroll({
+				height: '200px'
+			});
+		});
+
+		/* Date picker localisation */
+		$.fn.datepicker.dates['ru'] = {
+			days:           ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"],
+			daysShort:      ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"],
+			daysMin:        ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"],
+			months:         ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+			monthsShort:    ["Янв", "Фев", "Мар", "Апр", "Май", "Июнь", "Июль", "Авг", "Сен", "Окт", "Ноя", "Дек"],
+			today:          ["Сегодня"]
+		};
+	</script>
+
+		<!-- FooTable -->
+	<script src="/inspinia-v2.5/js/plugins/footable/footable.all.min.js"></script>
+
+	<!-- blueimp gallery -->
+	<script src="/inspinia-v2.5/js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
+
+	<!-- picture lazy loading -->
+	<script src="/js/jquery.lazyload.js"></script>
+
+	<!-- Catalog list image -->
+	<script src="/js/catalog.list.image.js"></script>
+
+	<!-- Page-Level Scripts -->
+	<script>
+		$('.close-product-removal-confirmation-container').click(function() {
+			$('.product-removal-confirmation-container').hide();
+		});
+
+		$('.remove-product-button').click(function() {
+			$('#product-removal-form > input[name="pid"]').val($(this).attr('data-product-id'));
+			$('.product-removal-confirmation-container').show();
+		});
+	</script>
+
+	<script>
+		$(document).ready(function () {
+
+			$('.footable').footable();
+
+		});
+
+		$("img.lazy").lazyload();
+
+		/* Catalog list image */
+		var catalogListImage = new ObjCatalogListImage('ru');
+		catalogListImage.getImagesForAllProductsFromCache();
+
+		/****************************************************************/
+		/*var gallery = blueimp.Gallery(
+				$('[id^=prodgall]'),
+				{
+					onopen: function (index) {
+						console.log(index);
+						console.log(this.list);
+						console.log(this.list[index]);
+						console.log('onopen');
+						// Callback function executed when the Gallery is initialized.
+					}
+					,
+					onopened: function () {
+						console.log('onopened');
+						// Callback function executed when the Gallery has been initialized
+						// and the initialization transition has been completed.
+					},
+					onslide: function (index, slide) {
+						console.log('onslide');
+						// Callback function executed on slide change.
+					},
+					onslideend: function (index, slide) {
+						console.log('onslideend');
+						// Callback function executed after the slide change transition.
+					},
+					onslidecomplete: function (index, slide) {
+						console.log('onslidecomplete');
+						// Callback function executed on slide content load.
+					},
+					onclose: function () {
+						console.log('onclose');
+						// Callback function executed when the Gallery is about to be closed.
+					},
+					onclosed: function () {
+						console.log('onclosed');
+						// Callback function executed when the Gallery has been closed
+						// and the closing transition has been completed.
+					}
+				}
+		);*/
+
+
+		/****************************************************************/
+
+
+
+	</script>
+
+<!-- Page-Level Scripts -->
+<script>
+	$(document).ready(function () {
+
+		if ($('#side-menu-tree').find('li.catalog-categories').find('a.catalog-list').next('ul.opened').length > 0) {
+
+			$('#side-menu-tree').find('li.catalog-categories').addClass('active');
+			$('#side-menu-tree').find('li.catalog-categories').find('a.catalog-list').next('ul.opened').addClass('in');
+		}
+
+		if ($('#side-menu-tree').find('li').find('a.catalog-list').find('span.nav-label').length > 0) {
+
+			/* Change window location when click on parent 'Categories' nav label */
+			$('body').delegate('#side-menu-tree a.catalog-list span.nav-label', 'click', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+
+				ajaxTreeToggle('ru', $(this));
+
+				/* uncomment to go by url */
+
+				/*var href = $(this).closest('a.catalog-list').attr('href');
+
+				if (href !== undefined && href !== null && $.trim(href).length > 0) {
+					window.location = href;
+				}*/
+			});
+
+			$('body').delegate('#side-menu-tree a.catalog-list span#root_toggle', 'click', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+
+				ajaxTreeToggle('ru', $(this));
+			});
+
+			/*$('body').delegate('#side-menu-tree a.catalog-list', 'click', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+
+				ajaxTreeToggle('ru', $(this));
+			});*/
+
+			/* Change window location when click on category nav label */
+			$('#side-menu-tree').find('a.catalog-list').next('ul.nav-second-level').find('.nav-label').each(function () {
+				$(this).click(function (e) {
+					e.preventDefault();
+					e.stopPropagation();
+
+					var href = $(this).closest('a').attr('href');
+
+					if (href !== undefined && href !== null && $.trim(href).length > 0) {
+						window.location = href;
+					}
+				});
+			});
+		}
+	});
+
+</script>
+
+</div>
+
+</body>
+</html>

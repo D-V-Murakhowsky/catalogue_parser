@@ -3,7 +3,7 @@ from typing import Union
 
 import pandas as pd
 from PySide6 import QtWidgets as qw
-from PySide6.QtCore import Slot, QThreadPool
+from PySide6.QtCore import Slot
 from scrapy.crawler import CrawlerProcess
 from scrapy.signals import spider_closed
 
@@ -11,6 +11,8 @@ from application.google_connector import GoogleConnector
 from application.main_window import Ui_MainWindow
 from application.page_getter import ScrapyPageGetter
 from application.synchronizer import Synchronizer
+
+from datetime import datetime
 
 
 class TheWindow(qw.QMainWindow):
@@ -36,13 +38,12 @@ class TheWindow(qw.QMainWindow):
         self.logger = logging.getLogger('app_logger')
         logging.getLogger('app_logger').setLevel(logging.DEBUG)
 
+        self.start_time = None
+
     def _run_sync(self):
         self.ui.pushButton_2.setDisabled(True)
+        self.start_time = datetime.now()
         self._show_message('Синхронізацію запущено')
-
-        google_getter = GoogleConnector()
-        google_getter._signals._read_df.connect(self._save_the_google_table)
-        QThreadPool().start(google_getter)
 
         process = CrawlerProcess({})
         process.crawl(ScrapyPageGetter)
@@ -64,15 +65,11 @@ class TheWindow(qw.QMainWindow):
 
     @Slot(int)
     def _page_processed(self, n: int):
-         self.ui.textBrowser.append(f'Сторінку {n} роспізнано')
+        self.ui.textBrowser.append(f'Сторінку {n} роспізнано')
 
     @Slot()
     def _logged_in(self):
         self.ui.textBrowser.append(f'Авторизацію здійснено')
-
-    @Slot(pd.DataFrame)
-    def _save_the_google_table(self, df):
-        self.google_df = df
 
     def spider_ended(self, spider, reason):
         if reason == 'finished':
@@ -82,12 +79,21 @@ class TheWindow(qw.QMainWindow):
             return
 
         self.catalogue_df = spider.df
+        self.google_df = GoogleConnector().get_the_df()
+
         if (self.google_df is not None) and (self.catalogue_df is not None):
             df_to_google_table = Synchronizer.sync_tables(self.catalogue_df, self.google_df)
             GoogleConnector.save_changes_into_gsheet(df_to_google_table)
             self._show_message('Синхронізацію закінчено')
+            td = datetime.now() - self.start_time
+            self._show_message(f'Час синхронизації: {(td.seconds // 60)} мін {td.seconds % 60} с')
         else:
-            self.ui.textBrowser.append(f'Помилка синхронизації')
+            if self.google_df is None:
+                self.ui.textBrowser.append(f'Помилка синхронизації. Немає Google таблиці')
+            elif self.catalogue_df is None:
+                self.ui.textBrowser.append(f'Помилка синхронизації. Немає таблиці каталогу')
+            else:
+                self.ui.textBrowser.append(f'Помилка синхронизації. Інша помилка')
 
         self.ui.pushButton_2.setDisabled(False)
 

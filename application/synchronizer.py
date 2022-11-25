@@ -36,7 +36,7 @@ class Synchronizer:
         :return: None
         """
         excel_df = cls._read_excel()
-        supplier_data['article'] = supplier_data['article'].astype('int64')
+        excel_df['Код_поставщика'] = excel_df['Код_поставщика'].astype('str')
         not_existing_present_articles = \
             supplier_data.loc[~supplier_data['article'].isin(google_sheet_data['Код_поставщика'].values)]
         not_existing_present_articles = \
