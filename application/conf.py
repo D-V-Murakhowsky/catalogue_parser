@@ -63,6 +63,10 @@ class Config:
         return self.data['test_mode'] == 1
 
     @property
+    def google_secret(self):
+        return self.data['google_secret']
+
+    @property
     def assets_dir(self):
         return self.cwd / 'assets'
 
