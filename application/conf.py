@@ -78,7 +78,8 @@ class Config:
         filepath = self.cwd / 'assets/data.json'
         try:
             with open(filepath, 'r', encoding='utf-8') as f:
-                self.data = json.load(f)['spartakelectronics.com']
+                json_string = ''.join(f.readlines()).strip('\ufeff')
+                self.data = json.loads(json_string)['spartakelectronics.com']
             logger.debug('JSON loaded')
         except Exception as ex:
             logger.error(f'{ex} while JSON loading')

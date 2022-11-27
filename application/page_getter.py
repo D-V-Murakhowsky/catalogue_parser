@@ -1,10 +1,20 @@
 import pandas as pd
+import scrapy.core.scraper
+import scrapy.utils.misc
 from PySide6.QtCore import Signal, QObject
 from scrapy import Spider
 from scrapy.http import FormRequest, Request
 
 from application import config
 from application.parser import Parser
+
+
+def warn_on_generator_with_return_value_stub(spider, callable):
+    pass
+
+
+scrapy.utils.misc.warn_on_generator_with_return_value = warn_on_generator_with_return_value_stub
+scrapy.core.scraper.warn_on_generator_with_return_value = warn_on_generator_with_return_value_stub
 
 
 class ScrapySignals(QObject):

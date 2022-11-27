@@ -45,6 +45,7 @@ class TheWindow(qw.QMainWindow):
         self.start_time = datetime.now()
         self._show_message('Синхронізацію запущено')
 
+        logging.getLogger('scrapy').propagate = False
         process = CrawlerProcess({})
         process.crawl(ScrapyPageGetter)
         for crawler in process.crawlers:
