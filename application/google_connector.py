@@ -5,6 +5,7 @@ import pandas as pd
 import pygsheets as pgs
 from PySide6.QtCore import QRunnable, QObject
 from PySide6.QtCore import Signal
+import re
 
 from application import config
 
@@ -71,11 +72,18 @@ class GoogleConnector(QRunnable):
         df[config.price_sync_column].fillna(0, inplace=True)
         df[config.price_sync_column] = df[config.price_sync_column].apply(lambda x: x if x != '' else 0.0)
         df['Код_поставщика'] = df[config.supplier_code_sync_column]\
-            .apply(lambda x: x[len(config.supplier_prefix) + 1:]).astype('int64')
+            .apply(cls._get_the_numeric_code).astype('int64')
         df.reset_index(inplace=True, drop=False, names=['row_number'])
         df['row_number'] += 2
         df.drop(inplace=True, columns=['filter_mask'])
         return df
+
+    @staticmethod
+    def _get_the_numeric_code(value: str) -> str:
+        try:
+            return re.findall(r'\d+', value)[0]
+        except Exception as ex:
+            logger.error(f'Error while parsing supplier code {value}. Error message: {ex}')
 
     @classmethod
     def save_changes_into_gsheet(cls, data: pd.DataFrame) -> NoReturn:
