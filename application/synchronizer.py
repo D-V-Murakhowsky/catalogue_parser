@@ -6,8 +6,11 @@ from PySide6.QtCore import QObject, Signal
 
 from application import config
 
+
 EXCEL_COLUMNS = ['Код_поставщика', 'Наименование', 'Цена', 'Флаг_добавления']
 
+
+logger = logging.getLogger('file_logger')
 
 
 class Synchronizer(QObject):
@@ -18,7 +21,7 @@ class Synchronizer(QObject):
         super().__init__()
         self.logger = logging.getLogger('file_logger')
 
-    def sync_tables(self, supplier_data: pd.DataFrame, google_sheet_data: pd.DataFrame) -> pd.DataFrame:
+    def sync_tables(self, supplier_data: pd.DataFrame, google_sheet_data: pd.DataFrame) -> NoReturn:
         """
         Make changes in google table data, read and write excel data
         :return: updated dataframe with changes in google data
@@ -46,7 +49,7 @@ class Synchronizer(QObject):
         :return: None
         """
         excel_df = cls._read_excel()
-        supplier_data['article'] = supplier_data['article'].astype('int64')
+        excel_df['Код_поставщика'] = excel_df['Код_поставщика'].astype('str')
         not_existing_present_articles = \
             supplier_data.loc[~supplier_data['article'].isin(google_sheet_data['Код_поставщика'].values)]
         not_existing_present_articles = \
@@ -76,7 +79,8 @@ class Synchronizer(QObject):
             try:
                 supplier_data = supplier_df.loc[supplier_df['article'] == row['Код_поставщика']].iloc[0]
             except Exception as ex:
-                continue
+                logger.error(f'Exception occurred during syncro process. Error message {ex}')
+                return pd.DataFrame()
 
             if row[config.price_sync_column] != supplier_data['prices']:
                 google_df.at[index, config.price_sync_column] = supplier_data['prices']

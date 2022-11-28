@@ -4,3 +4,6 @@ bs4~=0.0.1
 beautifulsoup4~=4.11.1
 selenium~=4.6.0
 pygsheets~=2.0.5
+Scrapy~=2.7.1
+Twisted~=22.10.0
+scrapyscript~=1.1.5
