@@ -1,5 +1,6 @@
 import logging
 from typing import NoReturn, Union, Dict
+import re
 
 import pandas as pd
 import pygsheets as pgs
@@ -55,23 +56,37 @@ class GoogleConnector(QObject):
         logger.debug('Google process finished')
         self.finished.emit(df)
 
-    @classmethod
-    def _format_google_df(cls, df) -> pd.DataFrame:
+    def _format_google_df(self, df) -> pd.DataFrame:
         """
         Formats received dataframe
         :param df: dataframe to format
         :return: formatted dataframe
         """
         df[config.supplier_code_sync_column] = df[config.supplier_code_sync_column].astype('str')
-        df = cls._filter_google_table_by_supplier_prefix(df)
+        df = self._filter_google_table_by_supplier_prefix(df)
         df[config.price_sync_column].fillna(0, inplace=True)
         df[config.price_sync_column] = df[config.price_sync_column].apply(lambda x: x if x != '' else 0.0)
         df['Код_поставщика'] = df[config.supplier_code_sync_column] \
-            .apply(lambda x: x[len(config.supplier_prefix) + 1:]).astype('int64')
+            .apply(self._get_the_numeric_code)
+        full_length = df.shape[0]
+        df = df.loc[df['Код_поставщика'] != ''].copy()
+        if full_length > df.shape[0]:
+            self.message.emit(f'З таблиці синхронізації видалено {full_length - df.shape[0]} рядків з некоректними артикулами')
+            logger.info(f'{full_length - df.shape[0]} rows were deleted while checking articles')
         df.reset_index(inplace=True, drop=False, names=['row_number'])
         df['row_number'] += 2
         df.drop(inplace=True, columns=['filter_mask'])
         return df
+
+    @staticmethod
+    def _get_the_numeric_code(value: str) -> str:
+        try:
+            return re.findall(r'\_\d+', value)[0]
+        except IndexError:
+            logger.info(f'Supplier code {value} is incorrect')
+            return ''
+        except Exception as ex:
+            logger.error(f'Error while handling supplier code {value}. Error message: {ex}')
 
     def save_changes_into_gsheet(self, data: pd.DataFrame) -> NoReturn:
         """

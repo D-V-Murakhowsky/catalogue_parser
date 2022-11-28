@@ -77,6 +77,10 @@ class Config:
         else:
             return pathlib.Path(__file__).parents[1].resolve() / 'assets'
 
+    @property
+    def host(self):
+        return self.data['host']
+
     def __init__(self):
         self.cwd = pathlib.Path(str(os.getcwd())).resolve()
         filepath = self.cwd / 'assets/data.json'

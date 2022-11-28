@@ -6,8 +6,7 @@ from PySide6.QtCore import QObject, Signal
 
 from application import config
 
-
-EXCEL_COLUMNS = ['Код_поставщика', 'Наименование', 'Цена', 'Флаг_добавления']
+EXCEL_COLUMNS = ['Код_поставщика', 'Наименование', 'Цена', 'Ссылки на изображения', 'Флаг_добавления']
 
 
 logger = logging.getLogger('file_logger')
@@ -36,8 +35,13 @@ class Synchronizer(QObject):
 
         self._new_articles_to_excel(google_sheet_data, supplier_data)
 
-        df = self._add_data_to_google_table(google_sheet_data, existing_articles)
-        self.logger.debug(f'Add data dataframe shape {df.shape}')
+        if existing_articles.shape[0] > 0:
+            df = self._change_data_in_google_table(google_sheet_data, existing_articles)
+            self.logger.debug(f'Add data dataframe shape {df.shape}')
+        else:
+            self.logger.debug('No articles to synchronize')
+            self.message.emit('Рядкі для синхронизації відсутні')
+
         self.finished.emit()
 
     @classmethod
@@ -49,7 +53,6 @@ class Synchronizer(QObject):
         :return: None
         """
         excel_df = cls._read_excel()
-        excel_df['Код_поставщика'] = excel_df['Код_поставщика'].astype('str')
         not_existing_present_articles = \
             supplier_data.loc[~supplier_data['article'].isin(google_sheet_data['Код_поставщика'].values)]
         not_existing_present_articles = \
@@ -60,14 +63,15 @@ class Synchronizer(QObject):
         not_existing_present_articles.drop(columns=['quantities'], inplace=True)
         not_existing_present_articles.rename(columns={'names': 'Наименование',
                                                       'article': 'Код_поставщика',
-                                                      'prices': 'Цена'},
+                                                      'prices': 'Цена',
+                                                      'images': 'Ссылки на изображения'},
                                              inplace=True)
         not_existing_present_articles['Флаг_добавления'] = '-'
         excel_df = pd.concat([excel_df, not_existing_present_articles]).reset_index(drop=True)
         cls._write_excel(excel_df)
 
     @classmethod
-    def _add_data_to_google_table(cls, google_df: pd.DataFrame, supplier_df: pd.DataFrame) -> pd.DataFrame:
+    def _change_data_in_google_table(cls, google_df: pd.DataFrame, supplier_df: pd.DataFrame) -> pd.DataFrame:
         """
         Updates data in the dataframe with data from the google table
         :param google_df: dataframe with data from the google sheet
@@ -101,10 +105,13 @@ class Synchronizer(QObject):
         Reads Excel file
         :return: None
         """
-        if (path := config.assets_dir / config.excel_file_name).exists():
-            return pd.read_excel(path, index_col=0)
-        else:
-            return pd.DataFrame(columns=EXCEL_COLUMNS)
+        try:
+            if (path := config.assets_dir / config.excel_file_name).exists():
+                return pd.read_excel(path, index_col=0, header=0, converters={'Код_поставщика': str})
+            else:
+                return pd.DataFrame(columns=EXCEL_COLUMNS)
+        except Exception as ex:
+            logger.error(f'Error while reading Excel. Error message: {ex}')
 
     @staticmethod
     def _write_excel(df: pd.DataFrame) -> NoReturn:
@@ -113,4 +120,8 @@ class Synchronizer(QObject):
         :param df: data to write
         :return: None
         """
-        df.to_excel(config.assets_dir / config.excel_file_name)
+        try:
+            df.to_excel(config.assets_dir / config.excel_file_name)
+        except Exception as ex:
+            logger.error(f'Error while writing Excel. Error message: {ex}')
+

@@ -47,7 +47,7 @@ class PageGetter(QObject):
         if start_page == -1:
             start_page, last_page = self._get_pages_range()
 
-        self.message.emit(f'Сторінки для парсингу: {str(start_page)} -{str(last_page)}')
+        self.message.emit(f'Сторінки для парсингу: {str(start_page)} - {str(last_page)}')
 
         if start_page < 0:
             raise ValueError('Improper start page value')

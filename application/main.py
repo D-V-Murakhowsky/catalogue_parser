@@ -49,6 +49,7 @@ class TheWindow(qw.QMainWindow):
         self.sync_thread = QThread(parent=self)
         self.sync_process.moveToThread(self.sync_thread)
         self.sync_process.message.connect(self._show_message)
+        self.sync_process.finished.connect(self._finished_process)
 
         self.ui.pushButton_2.clicked.connect(self.catalogue_getter.run)
         self.ui.pushButton_2.clicked.connect(self.google_table_processor.run)
@@ -61,7 +62,7 @@ class TheWindow(qw.QMainWindow):
         self.logger.debug('Main process init is complete')
 
     def _run_sync(self):
-        self.logger.debug('Run the sync button is pressed')
+        self.logger.debug('"Run the sync" button is pressed')
         self.ui.pushButton_2.setDisabled(True)
         self.google_df = None
         self.catalogue_df = None
@@ -88,6 +89,7 @@ class TheWindow(qw.QMainWindow):
     def _finished_process(self):
         self._show_message('Синхронізацію закінчено')
         self.ui.pushButton_2.setDisabled(False)
+        self.logger.info('Sync is completed')
 
 
 

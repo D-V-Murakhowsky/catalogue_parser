@@ -3,6 +3,8 @@ import pandas as pd
 from typing import Tuple
 import re
 
+from application import config
+
 
 class Parser:
 
@@ -10,18 +12,26 @@ class Parser:
     def get_table_from_the_page(source: str) -> pd.DataFrame:
         soup = BeautifulSoup(source, 'lxml')
         table = soup.find('table')
-        name, art, price, qty = [], [], [], []
+        name, art, price, qty, images = [], [], [], [], []
         for row in table.findAll('tr')[1:]:
             col = row.findAll('td')
             if len(col) == 7:
+                images_in_row = []
+                for item_in_set in col[0].findAll('img'):
+                    if (data_original_value := item_in_set.get('data-original')) is None:
+                        images_in_row.append(item_in_set.get('src'))
+                    else:
+                        images_in_row.append(data_original_value)
                 name.append(col[1].getText().strip())
                 art.append(col[3].getText().strip())
                 price.append(col[4].getText().strip())
                 qty.append(col[5].getText().strip())
+                images.append(','.join(list(map(lambda x: f'{config.host}{x}', images_in_row))))
         return Parser._proceed_articles_table(pd.DataFrame({'names': name,
                                                             'article': art,
                                                             'prices': price,
-                                                            'quantities': qty}))
+                                                            'quantities': qty,
+                                                            'images': images}))
 
     @staticmethod
     def get_pages_range(source: str) -> Tuple:
