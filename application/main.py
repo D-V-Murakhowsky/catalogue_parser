@@ -1,10 +1,11 @@
 import logging
 from datetime import datetime
 from typing import Union
+from scrapyscript import Job, Processor
 
 import pandas as pd
 from PySide6 import QtWidgets as qw
-from PySide6.QtCore import Slot
+from PySide6.QtCore import Slot, QThread, QThreadPool
 from scrapy.crawler import CrawlerRunner
 from scrapy.signals import spider_closed
 from scrapy.utils.project import get_project_settings
@@ -14,6 +15,7 @@ from application.google_connector import GoogleConnector
 from application.main_window import Ui_MainWindow
 from application.page_getter import ScrapyPageGetter
 from application.synchronizer import Synchronizer
+from application.crawler_process import QtCrawlerProcess
 
 
 class TheWindow(qw.QMainWindow):
@@ -42,25 +44,20 @@ class TheWindow(qw.QMainWindow):
         self.start_time = None
 
     def _run_sync(self):
-        self.ui.pushButton_2.setDisabled(True)
+        # self.ui.pushButton_2.setDisabled(True)
         self.start_time = datetime.now()
         self._show_message('Синхронізацію запущено')
 
         logging.getLogger('scrapy').propagate = False
+        the_job = Job(ScrapyPageGetter)
+        processor = Processor(settings=None)
+        data = processor.run(the_job)
+        print(data)
+        print('Scrapy process finished!')
 
-        runner = CrawlerRunner()
-
-        d = runner.crawl(ScrapyPageGetter)
-        d.addBoth(lambda _: self.spider_ended())
-        reactor.run()
-        # process = CrawlerProcess(settings=get_project_settings())
-        # process.crawl()
-        # for crawler in process.crawlers:
-        #     crawler.signals.connect(self.spider_ended, signal=spider_closed)
-        #     crawler.spider._signals.page.connect(self._page_processed)
-        #     crawler.spider._signals.page_range.connect(self._page_range)
-        #     crawler.spider._signals.logged_in.connect(self._logged_in)
-        # process.start()
+        # scrapy_crawler_qt_process = QtCrawlerProcess()
+        # pool = QThreadPool.globalInstance()
+        # pool.start(scrapy_crawler_qt_process)
 
     @Slot(str)
     def _show_message(self, message_str: str) -> None:

@@ -85,8 +85,7 @@ class GoogleConnector(QRunnable):
         except Exception as ex:
             logger.error(f'Error while parsing supplier code {value}. Error message: {ex}')
 
-    @classmethod
-    def save_changes_into_gsheet(cls, data: pd.DataFrame) -> NoReturn:
+    def save_changes_into_gsheet(self, data: pd.DataFrame) -> NoReturn:
         """
         Save changes to Google table's sheet
         :param data: data to save as the dataframe
@@ -95,11 +94,11 @@ class GoogleConnector(QRunnable):
         data = data.loc[data['change_flag'] == True]
         for index, row in data.iterrows():
             try:
-                cls._update_cell(row['row_number'],
-                                  row[config.availability_sync_column],
-                                  row[config.price_sync_column])
+                self._update_cell(row=row['row_number'],
+                                  availability=row[config.availability_sync_column],
+                                  price=row[config.price_sync_column])
             except Exception as ex:
-                continue
+                logger.error(f'Error while updating row {index}. Error message: {ex}')
 
     def _update_cell(self, row: int, availability: str, price: float) -> NoReturn:
         """
