@@ -21,7 +21,7 @@ class PageGetter(metaclass=Singleton):
     def parse_catalogue_pages_to_df(self, start_page=-1, last_page=-1, signal=None) -> pd.DataFrame:
         self._check_url()
         if config.test_mode & (start_page == -1):
-            start_page, last_page = 2, 4
+            start_page, last_page = 2, 12
 
         logger.info(f'Pages to parse: {start_page} - {last_page}')
         list_of_pages_sources = self.parse_catalogue_pages(start_page=start_page, last_page=last_page, signal=signal)
@@ -34,7 +34,7 @@ class PageGetter(metaclass=Singleton):
 
         if signal:
             signal.emit(f'Початкова сторінка: {str(start_page)}')
-            signal.emit(f'Кінцева сторінка: {str(start_page)}')
+            signal.emit(f'Кінцева сторінка: {str(last_page)}')
 
         if start_page < 0:
             raise ValueError('Improper start page value')
