@@ -1,18 +1,25 @@
+import logging
 from typing import NoReturn, Union, Dict
 
 import pandas as pd
 import pygsheets as pgs
+from PySide6.QtCore import QObject, Signal
 
 from application import config
-from .core import Singleton
+
+logger = logging.getLogger('file_logger')
 
 
-class GoogleConnector(metaclass=Singleton):
+class GoogleConnector(QObject):
     _schema: Union[Dict, None] = None
+    finished = Signal(pd.DataFrame)
+    message = Signal(str)
 
     def __init__(self):
+        super().__init__()
         try:
-            self.client = pgs.authorize(client_secret= config.assets_dir / 'client_secret.json',
+            logger.debug('Google authorization started')
+            self.client = pgs.authorize(client_secret=config.assets_dir / 'client_secret.json',
                                         credentials_directory=config.assets_dir)
             self.sh = self.client.open(config.google_table_name)
             self.ws = self.sh.worksheet('title', config.sheet_to_sync_name)
@@ -20,8 +27,10 @@ class GoogleConnector(metaclass=Singleton):
                                         config.supplier_code_sync_column,
                                         config.availability_sync_column,
                                         config.price_sync_column]
+            logger.debug('Google authorization was successful')
             self._get_schema()
         except Exception as ex:
+            logger.error(f'Google authorization has failed with error message {ex}')
             print(f'Exception occurs: {ex}')
 
     def _get_schema(self) -> NoReturn:
@@ -34,13 +43,17 @@ class GoogleConnector(metaclass=Singleton):
             columns_numbers = [(k, pgs.Address((None, v + 1), True).label) for v, k in enumerate(df.columns.to_list())]
             GoogleConnector._schema = dict(filter(lambda x: x[0] in self._processing_columns, columns_numbers))
 
-    def get_table_into_df(self) -> pd.DataFrame:
+    def run(self) -> NoReturn:
         """
         Gets Google table's sheet into dataframe (just necessary range)
         :return:
         """
-        return self._format_google_df(self.ws.get_as_df(end=f'AF{self.ws.rows}',
-                                                        numerize=True)[self._processing_columns])
+        logger.debug('Google process started')
+        self.message.emit('Почато отримання даних з Google таблиці')
+        df = self._format_google_df(self.ws.get_as_df(end=f'AF{self.ws.rows}',
+                                                      numerize=True)[self._processing_columns])
+        logger.debug('Google process finished')
+        self.finished.emit(df)
 
     @classmethod
     def _format_google_df(cls, df) -> pd.DataFrame:
@@ -53,7 +66,7 @@ class GoogleConnector(metaclass=Singleton):
         df = cls._filter_google_table_by_supplier_prefix(df)
         df[config.price_sync_column].fillna(0, inplace=True)
         df[config.price_sync_column] = df[config.price_sync_column].apply(lambda x: x if x != '' else 0.0)
-        df['Код_поставщика'] = df[config.supplier_code_sync_column]\
+        df['Код_поставщика'] = df[config.supplier_code_sync_column] \
             .apply(lambda x: x[len(config.supplier_prefix) + 1:]).astype('int64')
         df.reset_index(inplace=True, drop=False, names=['row_number'])
         df['row_number'] += 2
@@ -95,7 +108,6 @@ class GoogleConnector(metaclass=Singleton):
         :param data: data to filter
         :return: filtered data
         """
-        data['filter_mask'] = data[config.supplier_code_sync_column]\
+        data['filter_mask'] = data[config.supplier_code_sync_column] \
             .apply(lambda x: x[:2] == config.supplier_prefix)
         return data.loc[data['filter_mask']].copy()
-

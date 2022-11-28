@@ -1,31 +1,41 @@
+import logging
 from typing import NoReturn
 
 import pandas as pd
+from PySide6.QtCore import QObject, Signal
 
 from application import config
 
 EXCEL_COLUMNS = ['Код_поставщика', 'Наименование', 'Цена', 'Флаг_добавления']
 
 
-class Synchronizer:
 
-    @classmethod
-    def sync_tables(cls,
-                    supplier_data: pd.DataFrame,
-                    google_sheet_data: pd.DataFrame) -> pd.DataFrame:
+class Synchronizer(QObject):
+    finished = Signal()
+    message = Signal(str)
+
+    def __init__(self):
+        super().__init__()
+        self.logger = logging.getLogger('file_logger')
+
+    def sync_tables(self, supplier_data: pd.DataFrame, google_sheet_data: pd.DataFrame) -> pd.DataFrame:
         """
         Make changes in google table data, read and write excel data
-        :param supplier_data: dataframe with data from the supplier's site
-        :param google_sheet_data: dataframe with data from the Google sheet
         :return: updated dataframe with changes in google data
         """
+        self.logger.debug('Synchronization started')
+        self.logger.debug(f'Catalogue dataframe shape {supplier_data.shape}')
+        self.logger.debug(f'Google dataframe shape {google_sheet_data.shape}')
+        self.message.emit('Почато синхронізацію отриманих даних')
 
         existing_articles = \
             supplier_data.loc[supplier_data['article'].isin(google_sheet_data['Код_поставщика'].values)]
 
-        cls._new_articles_to_excel(google_sheet_data, supplier_data)
+        self._new_articles_to_excel(google_sheet_data, supplier_data)
 
-        return cls._add_data_to_google_table(google_sheet_data, existing_articles)
+        df = self._add_data_to_google_table(google_sheet_data, existing_articles)
+        self.logger.debug(f'Add data dataframe shape {df.shape}')
+        self.finished.emit()
 
     @classmethod
     def _new_articles_to_excel(cls, google_sheet_data, supplier_data) -> NoReturn:
