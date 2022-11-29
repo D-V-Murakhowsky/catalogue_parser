@@ -8,6 +8,7 @@ from application.google_connector import GoogleConnector
 from application.main_window import Ui_MainWindow
 from application.page_getter import PageGetter
 from application.synchronizer import Synchronizer
+from application.models import ResponseDataFrame
 
 
 class TheWindow(qw.QMainWindow):
@@ -23,7 +24,7 @@ class TheWindow(qw.QMainWindow):
         super(TheWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.pushButton.clicked.connect(self.close)
+        self.ui.pushButton.clicked.connect(self._close)
 
         self.catalogue_df = None
         self.google_df = None
@@ -67,15 +68,21 @@ class TheWindow(qw.QMainWindow):
         self.google_df = None
         self.catalogue_df = None
 
-    @Slot(pd.DataFrame)
-    def _df_received(self, df: pd.DataFrame):
-        if type(self.sender()).__name__ == 'PageGetter':
+    def _close(self):
+        if self.driver is not None:
+            self.driver.quit()
+            self.close()
+
+    @Slot(ResponseDataFrame)
+    def _df_received(self, response: ResponseDataFrame):
+        if response.response_id == 'Catalogue':
             self.logger.debug('Catalogue dataframe is received')
-            self.catalogue_df = df
-        elif type(self.sender()).__name__ == 'GoogleConnector':
+            self.catalogue_df = response.df
+        elif response.response_id == 'Google':
             self.logger.debug('Google dataframe is received')
-            self.google_df = df
+            self.google_df = response.df
         else:
+            self.logger.error('Illegal signal sender')
             raise RuntimeError('Illegal signal sender')
 
         if (self.catalogue_df is not None) & (self.google_df is not None):

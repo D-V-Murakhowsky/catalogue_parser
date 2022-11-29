@@ -7,13 +7,14 @@ import pygsheets as pgs
 from PySide6.QtCore import QObject, Signal
 
 from application import config
+from application.models import ResponseDataFrame
 
 logger = logging.getLogger('file_logger')
 
 
 class GoogleConnector(QObject):
     _schema: Union[Dict, None] = None
-    finished = Signal(pd.DataFrame)
+    finished = Signal(ResponseDataFrame)
     message = Signal(str)
 
     def __init__(self):
@@ -51,10 +52,12 @@ class GoogleConnector(QObject):
         """
         logger.debug('Google process started')
         self.message.emit('Почато отримання даних з Google таблиці')
-        df = self._format_google_df(self.ws.get_as_df(end=f'AF{self.ws.rows}',
-                                                      numerize=True)[self._processing_columns])
+        df = self.ws.get_as_df(end=f'AF{self.ws.rows}',
+                               numerize=True)[self._processing_columns]
+        logger.debug(f'From Google Disk has been loaded the table with the following shape {df.shape}')
+        df = self._format_google_df(df)
         logger.debug('Google process finished')
-        self.finished.emit(df)
+        self.finished.emit(ResponseDataFrame(df=df, response_id='Google'))
 
     def _format_google_df(self, df) -> pd.DataFrame:
         """
@@ -76,6 +79,7 @@ class GoogleConnector(QObject):
         df.reset_index(inplace=True, drop=False, names=['row_number'])
         df['row_number'] += 2
         df.drop(inplace=True, columns=['filter_mask'])
+        logger.debug(f'Google dataframe shape after formatting is {df.shape}')
         return df
 
     @staticmethod
