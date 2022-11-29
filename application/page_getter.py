@@ -37,7 +37,7 @@ class PageGetter(QObject):
         self.message.emit(f'Авторизацію пройдено')
 
         if config.test_mode & (start_page == -1):
-            start_page, last_page = 2, 4
+            start_page, last_page = 1, 5
 
         list_of_pages_sources = self.parse_catalogue_pages(start_page=start_page, last_page=last_page)
         list_of_parsed_dfs = list(map(lambda x: Parser.get_table_from_the_page(x), list_of_pages_sources))

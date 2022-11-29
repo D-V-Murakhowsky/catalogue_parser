@@ -57,6 +57,7 @@ class GoogleConnector(QObject):
         logger.debug(f'From Google Disk has been loaded the table with the following shape {df.shape}')
         df = self._format_google_df(df)
         logger.debug('Google process finished')
+        self.message.emit('Закінчено отримання даних з Google таблиці')
         self.finished.emit(ResponseDataFrame(df=df, response_id='Google'))
 
     def _format_google_df(self, df) -> pd.DataFrame:
@@ -85,7 +86,7 @@ class GoogleConnector(QObject):
     @staticmethod
     def _get_the_numeric_code(value: str) -> str:
         try:
-            return re.findall(r'\_\d+', value)[0]
+            return re.findall(r'\_[\d\-]+', value)[0][1:]
         except IndexError:
             logger.info(f'Supplier code {value} is incorrect')
             return ''
@@ -116,9 +117,9 @@ class GoogleConnector(QObject):
         :return: None
         """
         self.ws.update_value(f'{self._schema[config.availability_sync_column]}{str(row)}',
-                             availability)
+                             f"'{availability}")
         self.ws.update_value(f'{self._schema[config.price_sync_column]}{str(row)}',
-                             round(price, 2))
+                             round(float(price), 2))
 
     @staticmethod
     def _filter_google_table_by_supplier_prefix(data: pd.DataFrame) -> pd.DataFrame:

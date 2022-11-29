@@ -8,4 +8,4 @@ from pandas import DataFrame
 class ResponseDataFrame:
 
     df: DataFrame
-    response_id: Literal['Google', 'Catalogue']
+    response_id: Literal['Google', 'Catalogue', 'GoogleWrite']

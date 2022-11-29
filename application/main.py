@@ -1,14 +1,13 @@
 import logging
 
-import pandas as pd
 from PySide6 import QtWidgets as qw
 from PySide6.QtCore import Slot, QThread
 
 from application.google_connector import GoogleConnector
 from application.main_window import Ui_MainWindow
+from application.models import ResponseDataFrame
 from application.page_getter import PageGetter
 from application.synchronizer import Synchronizer
-from application.models import ResponseDataFrame
 
 
 class TheWindow(qw.QMainWindow):
@@ -35,8 +34,8 @@ class TheWindow(qw.QMainWindow):
         self.logger.debug('Selenium driver created')
 
         self.catalogue_getter = PageGetter(self.driver)
-        self.running_thread = QThread(parent=self)
-        self.catalogue_getter.moveToThread(self.running_thread)
+        self.catalogue_thread = QThread(parent=self)
+        self.catalogue_getter.moveToThread(self.catalogue_thread)
         self.catalogue_getter.message.connect(self._show_message)
         self.catalogue_getter.finished.connect(self._df_received)
 
@@ -56,7 +55,7 @@ class TheWindow(qw.QMainWindow):
         self.ui.pushButton_2.clicked.connect(self.google_table_processor.run)
         self.ui.pushButton_2.clicked.connect(self._run_sync)
 
-        self.running_thread.start()
+        self.catalogue_thread.start()
         self.google_thread.start()
         self.sync_thread.start()
 
@@ -71,6 +70,9 @@ class TheWindow(qw.QMainWindow):
     def _close(self):
         if self.driver is not None:
             self.driver.quit()
+            self.catalogue_thread.quit()
+            self.google_thread.quit()
+            self.sync_thread.quit()
             self.close()
 
     @Slot(ResponseDataFrame)
@@ -92,8 +94,10 @@ class TheWindow(qw.QMainWindow):
     def _show_message(self, message_str: str) -> None:
         self.ui.textBrowser.append(f'{message_str}')
 
-    @Slot()
-    def _finished_process(self):
+    @Slot(ResponseDataFrame)
+    def _finished_process(self, data: ResponseDataFrame):
+        self.logger.debug(f'Writing into Google Sheet. DataFrame shape is {data.df.shape}')
+        self.google_table_processor.save_changes_into_gsheet(data.df)
         self._show_message('Синхронізацію закінчено')
         self.ui.pushButton_2.setDisabled(False)
         self.logger.info('Sync is completed')

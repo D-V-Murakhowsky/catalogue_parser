@@ -5,6 +5,7 @@ import pandas as pd
 from PySide6.QtCore import QObject, Signal
 
 from application import config
+from application.models import ResponseDataFrame
 
 EXCEL_COLUMNS = ['Код_поставщика', 'Наименование', 'Цена', 'Ссылки на изображения', 'Флаг_добавления']
 
@@ -13,7 +14,7 @@ logger = logging.getLogger('file_logger')
 
 
 class Synchronizer(QObject):
-    finished = Signal()
+    finished = Signal(ResponseDataFrame)
     message = Signal(str)
 
     def __init__(self):
@@ -37,12 +38,14 @@ class Synchronizer(QObject):
 
         if existing_articles.shape[0] > 0:
             df = self._change_data_in_google_table(google_sheet_data, existing_articles)
+
             self.logger.debug(f'Add data dataframe shape {df.shape}')
         else:
+            df = pd.DataFrame()
             self.logger.debug('No articles to synchronize')
             self.message.emit('Рядкі для синхронизації відсутні')
 
-        self.finished.emit()
+        self.finished.emit(ResponseDataFrame(df=df, response_id='GoogleWrite'))
 
     @classmethod
     def _new_articles_to_excel(cls, google_sheet_data, supplier_data) -> NoReturn:
@@ -81,10 +84,13 @@ class Synchronizer(QObject):
         google_df['change_flag'] = False
         for index, row in google_df.iterrows():
             try:
-                supplier_data = supplier_df.loc[supplier_df['article'] == row['Код_поставщика']].iloc[0]
+                syncing = supplier_df.loc[supplier_df['article'] == row['Код_поставщика']]
+                if syncing.shape[0] > 0:
+                    supplier_data = syncing.iloc[0]
+                else:
+                    continue
             except Exception as ex:
                 logger.error(f'Exception occurred during syncro process. Error message {ex}')
-                return pd.DataFrame()
 
             if row[config.price_sync_column] != supplier_data['prices']:
                 google_df.at[index, config.price_sync_column] = supplier_data['prices']
